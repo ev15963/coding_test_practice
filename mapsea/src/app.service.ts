@@ -33,20 +33,10 @@ export class AppService {
     // console.log(result, 'result');
   const value = await lastValueFrom(result);
    let api_data = value.data.response.result.chart.items.tracks;
-  //  let api_data1 = value.data.response.result.chart.items.tracks.artists[0];
-   
-  //  console.log(api_data,'length');
 
-  //  console.log(res.artists);
-
-  //  for (let i = 0; i < api_data.length; i++) {
-     let result_new = api_data.filter(findone => findone.trackId == '54692454');
+     let result_new = api_data.filter(findone => findone.trackId == userData);
      console.log(result_new, 'result_new');
-     
-  //  }
-   let map1 = api_data.map(x => x);
-  //  console.log(map1);
-  //  return value.data.response.result.chart.items.tracks[0];
-   return map1;
+
+   return result_new;
  }
 }
