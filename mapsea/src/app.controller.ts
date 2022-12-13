@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
+import { UserDto } from './dto/app.dto';
 
 @Controller()
 export class AppController {
@@ -13,6 +14,12 @@ export class AppController {
   @Get('/total')
   getTotal() {
     const result = this.appService.getTotal();
+    return result;
+  }
+
+  @Get('/singer/:singer')
+  getSinger(@Param('singer') userData : UserDto) {
+    const result = this.appService.getSinger(userData);
     return result;
   }
 }
