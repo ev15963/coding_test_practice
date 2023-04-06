@@ -6,7 +6,7 @@ function factorial (num) {
 	} else if (num == 0) {
 		return 0;
 	} else {
-		return num = num * factorial(num-1);
+		return num *= factorial(num-1);
 	}
 }
 
