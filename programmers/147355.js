@@ -17,39 +17,17 @@ const p = "271";
 const plength = p.length;
 const list = []; //
 
-
 // const list = [314, 141, 415, 159, 592];
-const t0 =Number (t.substring(0,plength))
-console.log(t0);
-list.push(t0);
-console.log(list);
-// list 빈값에 substring한 값을 추가
-// const t0 = "314";
-const t1 = Number (t.substring(1, plength+1));
-console.log(t1);
-list.push(t1);
-
-
-
-const t2 = Number (t.substring(2, plength+2));
-console.log(t2);
-list.push(t2);
-
-const t3 = Number (t.substring(3, plength+3));
-console.log(t3);
-list.push(t3);
-
-
-const t4 = Number (t.substring(4, plength+4));
-console.log(t4);
-list.push(t4);
-console.log(list);
-const n = Number(p);
+for (let i = 0; i<4; i++) {
+    let test = Number (t.substring(i, plength+i));
+    list.push(test);
+    console.log(list);
+}
 
 var num = 0;
 
 for (var i = 0; i < list.length; i++) {
-    if (n >= list[i]) {
+    if (Number(p) >= list[i]) {
         num++;
     }
 }
