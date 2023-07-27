@@ -10,9 +10,11 @@
 // task 3 : 각각의 substring을 반복문으로 만들기
 
 // const t0 = t[0] + t[1] + t[2];
-
-const t = "314159211";
-const p = "271";
+// "500220839878"	"7"	8
+// const t = "314159211";
+// const p = "271";
+const t = "500220839878";
+const p = "7";
 
 const plength = p.length;
 const list = []; //
