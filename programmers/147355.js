@@ -13,8 +13,12 @@
 // "500220839878"	"7"	8
 // const t = "314159211";
 // const p = "271";
-const t = "500220839878";
-const p = "7";
+// const t = "500220839878";
+// const p = "7";
+
+// "10203"	"15"	3
+const t = "10203";
+const p = "15";
 
 const plength = p.length;
 const list = []; //
