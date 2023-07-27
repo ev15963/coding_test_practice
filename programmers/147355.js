@@ -11,14 +11,14 @@
 
 // const t0 = t[0] + t[1] + t[2];
 
-const t = "3141592";
+const t = "314159211";
 const p = "271";
 
 const plength = p.length;
 const list = []; //
 
-// const list = [314, 141, 415, 159, 592];
-for (let i = 0; i<4; i++) {
+// const list = [314, 141, 415, 159, 592]; // 921, 211
+for (let i = 0; i<7; i++) {
     let test = Number (t.substring(i, plength+i));
     list.push(test);
     console.log(list);
