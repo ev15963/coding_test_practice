@@ -18,7 +18,8 @@ const plength = p.length;
 const list = []; //
 
 // const list = [314, 141, 415, 159, 592]; // 921, 211
-for (let i = 0; i<7; i++) {
+// 7의 길이를 게산
+for (let i = 0; i<t.length-(p.length-1); i++) {
     let test = Number (t.substring(i, plength+i));
     list.push(test);
     console.log(list);
