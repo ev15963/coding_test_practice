@@ -10,8 +10,9 @@
 
 const t = "3141592";
 const p = "271";
-const list = [314, 141, 415, 159, 592];
-const t0 = t[0] + t[1] + t[2];
+
+const t0 = t.substring(0,3)
+console.log(t0);
 
 const n = Number(p);
 var num = 0;
