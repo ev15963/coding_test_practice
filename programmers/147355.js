@@ -11,10 +11,9 @@
 const t = "3141592";
 const p = "271";
 
-const t0 = t.substring(0,3)
-console.log(t0);
 
 const n = Number(p);
+const list = [314, 141, 415, 159, 592];
 var num = 0;
 
 for (var i = 0; i < list.length; i++) {
