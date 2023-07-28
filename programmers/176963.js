@@ -1,3 +1,8 @@
+/**
+ * 추억 점수
+ * URL : https://school.programmers.co.kr/learn/courses/30/lessons/176963
+ */
+
 // name : ["may", "kein", "kain", "radi"]
 // yearning : [5, 10, 1, 3]
 // photo : [["may", "kein", "kain", "radi"],["may", "kein", "brin", "deny"], ["kon", "kain", "may", "coni"]]
