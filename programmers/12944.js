@@ -15,7 +15,14 @@
 //  [1,2,3,4]	2.5
 //  [5,5]	    5
 
+const arr = [1,2,3,4];
+
 function solution(arr) {
-    var answer = 0;
-    return answer;
+    // var answer = 0;
+    // var arr1 = arr.map((v) => v.reduce((acc, cur) => acc + cur, 0));
+    var arr1 = arr.reduce((acc, cur) => acc + cur, 0);
+    return arr1;
 }
+
+const ans = solution(arr);
+console.log(ans); //to be  2.5
