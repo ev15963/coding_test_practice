@@ -14,3 +14,8 @@
 //  arr	        return
 //  [1,2,3,4]	2.5
 //  [5,5]	    5
+
+function solution(arr) {
+    var answer = 0;
+    return answer;
+}
