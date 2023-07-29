@@ -59,6 +59,12 @@
 // 그리고 reverse() 함수를 사용해서 배열을 역순으로 뒤집어준다.
 // join()으로 하나의 문자열로 합쳐주면 끝!
 
+// javascipt 3진법 (3진법 -> 10진법)
+// 출처 : https://ryuhojin.tistory.com/20
+// N진수 -> N진수
+// //3진수 -> 2진수
+// console.log(parseInt("21121",3).toString(2));
+
 let decimal = 125;
 
 function solution(decimal) {
@@ -66,9 +72,8 @@ function solution(decimal) {
     console.log(answer);
     console.log(answer.split('').reverse('').join(''));
     var answer_reverse = answer.split('').reverse('').join('');
-    return answer_reverse;
+    var answer_10 = parseInt(answer_reverse, 3);
+    return answer_10;
 }
 
 console.log(solution(decimal));
-
-//to be : 7
