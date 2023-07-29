@@ -18,8 +18,6 @@
 const arr = [1,2,3,4];
 
 function solution(arr) {
-    // var answer = 0;
-    // var arr1 = arr.map((v) => v.reduce((acc, cur) => acc + cur, 0));
     var arr_sum = arr.reduce((acc, cur) => acc + cur, 0);
     return arr_sum/arr.length;
 }
