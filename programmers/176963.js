@@ -26,7 +26,7 @@
  * }, 0);
 */
 function solution(name, yearning, photo) {
-    return photo.map((v)=> v.reduce((acc, cur)=> acc += yearning[name.indexOf(cur)] ?? 0, 0));
+    return photo.map((v)=> v.reduce((acc, cur)=> acc += (yearning[name.indexOf(cur)] ?? 0), 0))
 }
 
 let name = ["may", "kein", "kain", "radi"];
