@@ -31,7 +31,7 @@
 //  따라서 229를 return 해야 합니다.
 
 
-// 자바스크립트 진법 변환
+// javascipt 3진법
 // 출처 : https://ryuhojin.tistory.com/20
 // 10진수  -> 2진수( 3, 4, 5...N 진수)
 // let decimal = 2022;
@@ -43,12 +43,30 @@
 // console.log(decimal.toString(N));
 
 
-let decimal = 45;
+// javascipt 역순으로 출력
+// 출처 : https://lakelouise.tistory.com/145
+// 📝 str.split('').reverse().join('')
+// function reverse(str) {
+//     let reverse = str.split('');
+ 
+//     reverse = reverse.reverse();
+ 
+//     return reverse.join('')
+// }
+ 
+// console.log(reverse("Hello")); // olleH
+// split()은 지정해준 구분자로 나눠서 배열로 반환해준다.
+// 그리고 reverse() 함수를 사용해서 배열을 역순으로 뒤집어준다.
+// join()으로 하나의 문자열로 합쳐주면 끝!
+
+let decimal = 125;
 
 function solution(decimal) {
     var answer = decimal.toString(3);
     console.log(answer);
-    return answer;
+    console.log(answer.split('').reverse('').join(''));
+    var answer_reverse = answer.split('').reverse('').join('');
+    return answer_reverse;
 }
 
 console.log(solution(decimal));
