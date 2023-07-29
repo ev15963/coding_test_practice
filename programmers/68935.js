@@ -65,6 +65,9 @@
 // //3진수 -> 2진수
 // console.log(parseInt("21121",3).toString(2));
 
+// 다른 분 답안
+// URL : https://school.programmers.co.kr/learn/courses/30/lessons/68935/solution_groups?language=javascript
+
 let decimal = 125;
 
 function solution(decimal) {
