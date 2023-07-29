@@ -30,7 +30,27 @@
 //  125	        11122	        22111	            229
 //  따라서 229를 return 해야 합니다.
 
-function solution(n) {
-    var answer = 0;
+
+// 자바스크립트 진법 변환
+// 출처 : https://ryuhojin.tistory.com/20
+// 10진수  -> 2진수( 3, 4, 5...N 진수)
+// let decimal = 2022;
+// //10진수 -> 2진수
+// console.log(decimal.toString(2));
+// //10진수 -> 3진수
+// console.log(decimal.toString(3));
+// //10진수 -> N진수
+// console.log(decimal.toString(N));
+
+
+let decimal = 45;
+
+function solution(decimal) {
+    var answer = decimal.toString(3);
+    console.log(answer);
     return answer;
 }
+
+console.log(solution(decimal));
+
+//to be : 7
