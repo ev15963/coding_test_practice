@@ -29,3 +29,8 @@
 //  n (10진법)	n (3진법)	    앞뒤 반전(3진법)	10진법으로 표현
 //  125	        11122	        22111	            229
 //  따라서 229를 return 해야 합니다.
+
+function solution(n) {
+    var answer = 0;
+    return answer;
+}
