@@ -20,10 +20,10 @@ const arr2 = [30, 1, 21, 17, 28];
 
 function solution(n, arr1, arr2) {
     console.log(n);
-    var a = arr1.map((v) => v.toString(2).padStart(5, '0'));
+    let a = arr1.map((v) => v.toString(2).padStart(5, '0'));
     console.log(a);
     
-    var b = arr2.map((v) => v.toString(2).padStart(5, '0'));
+    let b = arr2.map((v) => v.toString(2).padStart(5, '0'));
     console.log(b);
     
     console.log(a[0][0]);
@@ -44,10 +44,15 @@ function solution(n, arr1, arr2) {
 
     // - Array.prototype.map() 메서드 사용
     //   arrA.map((x, y) => x + arrB[y]); // [6, 8, 10, 12,]
-    var a_new = a.map((v,w)=> Number(v)+Number(b[w]));
+    let a_new = a.map((v,w)=> Number(v)+Number(b[w]));
     console.log(a_new);
 
-    var answer = [];
+    // 출력값으로 바꾸기
+    //for (let i of a_new) {
+    //    console.log(i);
+    //}
+
+    let answer = [];
     return answer;
 }
 const ans = solution(n, arr1, arr2);
