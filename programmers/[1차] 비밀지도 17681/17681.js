@@ -44,13 +44,15 @@ function solution(n, arr1, arr2) {
 
     // - Array.prototype.map() 메서드 사용
     //   arrA.map((x, y) => x + arrB[y]); // [6, 8, 10, 12,]
-    let a_new = a.map((v,w)=> Number(v)+Number(b[w]));
+    let a_new = a.map((v,i)=> String(Number(v)+Number(b[i])));
     console.log(a_new);
 
     // 출력값으로 바꾸기
     //for (let i of a_new) {
     //    console.log(i);
     //}
+    let b_new = a_new.map((v)=> v.split('0').join(' ').split('1').join('#').split('2').join('#'));
+    console.log(b_new);
 
     let answer = [];
     return answer;
