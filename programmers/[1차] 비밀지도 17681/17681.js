@@ -54,8 +54,7 @@ function solution(n, arr1, arr2) {
     let b_new = a_new.map((v)=> v.split('0').join(' ').split('1').join('#').split('2').join('#'));
     console.log(b_new);
 
-    let answer = [];
-    return answer;
+    return b_new;
 }
 const ans = solution(n, arr1, arr2);
 
