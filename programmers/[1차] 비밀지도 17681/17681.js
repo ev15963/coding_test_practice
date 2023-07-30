@@ -58,5 +58,5 @@ function solution(n, arr1, arr2) {
 }
 const ans = solution(n, arr1, arr2);
 
-//to be : ["#####","# # #", "### #", "# ##","#####"]
+//to be : ["######", "### #", "## ##", " #### ", " #####", "### # "]
 console.log(ans);
