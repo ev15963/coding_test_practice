@@ -26,6 +26,27 @@ function solution(n, arr1, arr2) {
     var b = arr2.map((v) => v.toString(2).padStart(5, '0'));
     console.log(b);
     
+    console.log(a[0][0]);
+
+    // 
+    // 자바스크립트 배열 끼리 값 더하기
+    // 내가 생각한거 
+    // for (let i; i<n; i++) {
+    //     for (let j; j<n; j++) {
+    //         if (a[i][j] + b[i][j] >= 1) {
+    //             a[i][j] = 1;
+    //         } else {
+    //             a[i][j] = 0;
+    //         }
+    //         console.log(a);
+    //     }
+    // }
+
+    // - Array.prototype.map() 메서드 사용
+    //   arrA.map((x, y) => x + arrB[y]); // [6, 8, 10, 12,]
+    var a_new = a.map((v,w)=> Number(v)+Number(b[w]));
+    console.log(a_new);
+
     var answer = [];
     return answer;
 }
