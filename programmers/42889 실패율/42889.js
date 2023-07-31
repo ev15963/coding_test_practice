@@ -7,10 +7,16 @@
 
 const N = 5;
 const stages = [2, 1, 2, 6, 2, 4, 3, 3];
-// task 1. stages의 길이의 사용자가  
+// task 1. 스테이지 실패율 구하기
 function solution(N, stages) {
     console.log(stages);
-    
+    let fail_arr = [];
+    for (let i=1; i<N+1; i++) {
+        let fail_rate = stages.filter((v)=> v===i).length;
+        fail_arr.push(fail_rate);
+    }
+    console.log(fail_arr);
+    // console.log(fail_rate);
     var answer = [];
     return answer;
 }
