@@ -1,3 +1,5 @@
+const matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
 function solution(matrix) {
     var answer = [[]];
 
@@ -6,3 +8,7 @@ function solution(matrix) {
 
     return answer;
 }
+
+const ans = solution(matrix);
+console.log(ans);
+// to be : [[17, 19, 21], [23, 25, 27], [29, 31, 33]]
