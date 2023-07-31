@@ -13,10 +13,12 @@ function solution(N, stages) {
     let fail_arr = [];
     for (let i=1; i<N+1; i++) {
         let fail_rate = stages.filter((v)=> v===i).length;
-        fail_arr.push(fail_rate);
+        let fail_rate2 = stages.filter((v)=> v>=i).length;
+        fail_arr.push(fail_rate / fail_rate2);
+        // console.log(fail_rate2);
     }
     console.log(fail_arr);
-    // console.log(fail_rate);
+
     var answer = [];
     return answer;
 }
