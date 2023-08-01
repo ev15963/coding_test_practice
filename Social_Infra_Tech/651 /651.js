@@ -32,6 +32,17 @@ function solution(matrix) {
     console.log(colSums);
     console.log(resultMatrix);
 
+    // task 3. 새로운 행렬 생성
+    const newMatrix = [];
+    for (let i = 0; i < numRows; i++) {
+        const newRow = [];
+        for (let j = 0; j < numCols; j++) {
+            newRow.push(rowSums[i] + colSums[j] - matrix[i][j])
+        }
+        newMatrix.push(newRow);
+    }
+
+    return newMatrix;
 }
 
 const ans = solution(matrix);
