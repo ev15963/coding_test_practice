@@ -7,3 +7,13 @@
 
 // [ { answer : 1, score : 5 }, { answer : 3, score : 3 }, { answer : 2, score : 4 } ] → a : 5
 // [ { answer : 1, score : 5 }, { answer : 5, score : 5 }, { answer : 2, score : 4 } ] → a : 5, c : 5
+
+const arr = [ { answer : 1, score : 5 }, { answer : 3, score : 3 }, { answer : 2, score : 4 } ]
+
+function solution(arr) {
+    
+    return answer;
+}
+
+const ans = solution(arr);
+// to be : a : 5
