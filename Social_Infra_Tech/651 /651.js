@@ -7,29 +7,31 @@ function solution(matrix) {
     const numRows = matrix.length;
     const numCols = matrix[0].length;
 
+    console.log(numRows);
+    console.log(numCols);
+
     const rowSums = Array(numRows).fill(0);
     const colSums = Array(numCols).fill(0);
     
     console.log(rowSums);
     console.log(colSums);
     
-    
+    // task 2.  열과 합 계산 rowSums: 열의 값 합, colSums: 행의 값 합
+    for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+            console.log(i);
+            console.log(j);
+            console.log(matrix[i][j]);
+            rowSums[i] += matrix[i][j];
+            console.log(rowSums[i]);
+            colSums[j] += matrix[i][j];
+            console.log(colSums[j]);
+        }
+    }
+    console.log(rowSums);
+    console.log(colSums);
+    console.log(resultMatrix);
 
-    // for (let i = 0; i < matrix.length; i++) {
-    // const row = [];
-    //     for (let j = 0; j < matrix[i].length; j++) {
-    //         row.push(matrix[i][j]);
-    //     }
-    //     resultMatrix.push(row);
-    // }
-    // console.log(resultMatrix)
-
-    var answer = [[]];
-
-    // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다. 
-    console.log('Hello Javascript')
-
-    return answer;
 }
 
 const ans = solution(matrix);
