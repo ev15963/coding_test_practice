@@ -7,8 +7,14 @@
 // - arr 배열의 길이는 최소 3입니다.
 // - 입출력 예 : [ 1 , 2 , 3 ] → ( {1 | 2} → 2 + { 1 | 3 } → 3 + { 2 | 3 } → 6 ) = 11
 
+const arr = [ 1 , 2 , 3 ];
+
 function solution(arr) {
     let answer = '';
 
     return answer;
 }
+
+const ans = solution(arr);
+console.log(ans);
+// to be : 11
