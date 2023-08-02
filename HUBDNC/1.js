@@ -15,6 +15,9 @@ function solution(arr) {
     console.log(arr);
     // task 1. 시험 응시자는 answer 1 = a, 3 = b, 5 = c
     // task 1.1. 배열 중 가장 score이 큰 값 찾기
+    // const array1 = [1, 3, 2];
+    // console.log(Math.max(...array1));
+    // 참고 URL : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/max
     const score_max = Math.max(...arr.map((v)=> v.score));
     console.log(score_max);
     // task 1.2. 큰 값을 비교해서 뽑기
