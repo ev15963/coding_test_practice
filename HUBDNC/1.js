@@ -21,7 +21,8 @@ function solution(arr) {
     const score_max = Math.max(...arr.map((v)=> v.score));
     console.log(score_max);
     // task 1.2. 큰 값을 비교해서 뽑기
-
+    const score_max_arr = arr.filter((v)=> v.score == score_max);
+    console.log(score_max_arr);
 
     return answer;
 }
