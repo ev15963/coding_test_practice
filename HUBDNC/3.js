@@ -11,3 +11,8 @@
 // a : 5 → 10
 // a : 10 → 17
 // a : 30 → 129
+
+function solution(arr) {
+
+    return answer;
+}
