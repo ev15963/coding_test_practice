@@ -24,7 +24,44 @@ function solution(arr) {
     console.log(score_max_arr);
 
     // task 3. 시험 응시자는 answer 1 = a, 3 = b, 5 = c
+    // push object
+    // Json Data Push 방법
 
+    // let data1 = {}; // object
+    // let data2 = []; // array 
+
+    // data1.test1 = "테스트1";
+    // data1 >> {"test1" : "테스트1"}
+
+    // data1["test2"] = "테스트2";
+    // data1 >> {"test1" : "테스트1", "test2" : "테스트2"}
+
+    // data2.push({"test3" : "테스트3"})
+    // data2 >> [{"test3" : "테스트3"}]
+
+    // data2.push(data1)
+    // data2 >> [{"test3" : "테스트3"}, {"test1" : "테스트1", "test2" : "테스트2"}]
+
+    // URL : https://grandj.tistory.com/244
+    const answer = score_max_arr.map((v)=> {
+        const arr_return = {};
+        switch(v.answer) {
+            case 1:
+                arr_return['a'] = score_max;
+                break;
+            case 3:
+                arr_return['b'] = score_max;
+                break;
+            case 5:
+                arr_return['c'] = score_max;
+                break;
+            default:
+                console.log('배열값이 없습니다.')
+        }
+        
+        return arr_return;
+    });
+    console.log(answer);
     return answer;
 }
 
