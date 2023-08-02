@@ -10,7 +10,12 @@
 const arr = [ 1 , 2 , 3 ];
 
 function solution(arr) {
-    let answer = '';
+    // task 1. 모든 원소들을 짝 짓기
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            console.log(i, j);
+        }
+    }
 
     return answer;
 }
