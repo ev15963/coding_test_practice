@@ -41,6 +41,11 @@ function solution(arr) {
     }
     console.log(gcd(12, 8));
 
+    // 최대공약수 lcm = (a * b) / 최소공배수 gcd
+    const lcm = (a, b) => {
+        return (a * b) / gcd(12, 8);
+    }
+    console.log(lcm(12, 8));
     return answer;
 }
 
