@@ -12,15 +12,15 @@
 // a : 10 → 17
 // a : 30 → 129
 
-const decimal = 5;
+const a = 5;
 
-function solution(decimal) {
-    if (decimal < 4) throw new Error('소수의 값이 최솟값이 아닙니다.');
-    console.log(decimal);
+function solution(a) {
+    if (a < 4) throw new Error('소수의 값이 최솟값이 아닙니다.');
+    console.log(a);
     
     return answer;
 }
-const ans = solution(decimal);
+const ans = solution(a);
 console.log(ans);
 
 // to be : 10
