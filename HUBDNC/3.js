@@ -12,7 +12,13 @@
 // a : 10 → 17
 // a : 30 → 129
 
-function solution(arr) {
+const decimal = 3;
+
+function solution(decimal) {
+    if (decimal < 4) throw new Error('소수의 값이 최솟값이 아닙니다.');
+    
 
     return answer;
 }
+
+// to be : 10
