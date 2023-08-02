@@ -34,12 +34,14 @@ const gcd = (a, b) => {
 // 최대공약수 lcm = (a * b) / 최소공배수 gcd
 const lcm = (a, b) => {return (a * b) / gcd(a, b)};
 
+let answer = 0;
+
 function solution(arr) {
     // task 1. 모든 원소들을 짝 짓기
     for (let i = 0; i < arr.length - 1; i++) {
         for (let j = i + 1; j < arr.length; j++) {
             console.log(lcm(i+1, j+1));
-            
+            answer += lcm(i+1, j+1);
         }
     }
 
