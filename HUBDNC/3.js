@@ -39,11 +39,16 @@ function solution(a) {
     if (a < 4) throw new Error('소수의 값이 최솟값이 아닙니다.');
     console.log(a);
 
-    let isPrime1 = isPrime(a);
-    console.log(isPrime1);
-    
+    // task 2. 2부터 a까지 소수의 합
+    let primeSum = 0;
 
-    return isPrime1;
+    for (let i = 2; i <= a; i++) {
+        if (isPrime(i)) {
+            primeSum += i;
+        }
+    }
+
+    return primeSum;
 }
 const ans = solution(a);
 console.log(ans);
