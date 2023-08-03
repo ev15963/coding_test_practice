@@ -30,8 +30,24 @@ function another_O_n_algorithm(n) {
 }
 
 // task 3. O(log n)
-function O_log_n_algorithm(n) {
-    
+// 이진 탐색 함수 (빅오 시간 복잡도: O(log n))
+function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+
+        if (arr[mid] === target) {
+                return mid;
+        } else if (arr[mid] < target) {
+                left = mid + 1;
+        } else {
+                right = mid - 1;
+        }
+    }
+
+    return -1; // 찾지 못한 경우
 }
 
 // task 4. O(n2)
