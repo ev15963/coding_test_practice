@@ -30,3 +30,23 @@ function another_O_n_algorithm(n) {
 }
 
 // task 3. O(log n)
+
+
+// task 4. O(n2)
+function O_quadratic_algorithm(n) {
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            // do something for 1 second
+        }
+    }
+}
+
+function another_O_quadratic_algorithm(n) {
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            for (let k = 0; k < n; k++) {
+              // do something for 1 second
+            }
+        }
+    }
+}
