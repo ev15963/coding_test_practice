@@ -50,3 +50,10 @@ function another_O_quadratic_algorithm(n) {
         }
     }
 }
+
+// task 5. O(2n)
+function fibonacci(n) {
+    if (n <= 1) return 1;
+    
+    return fibonacci(n-1) + fibonacci(n-2);
+}
