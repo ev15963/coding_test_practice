@@ -14,11 +14,36 @@
 
 const a = 5;
 
+// task 1. 소수 판별하기
+// function isPrime(N) {
+//     // 1은 소수가 아니다.
+//     if (N === 1) return false;
+//     // 2부터 N제곱근까지의 수로 N을 나눴을 때
+//     for (let i = 2; i <= Math.sqrt(N); i++) {
+//       // 나누어 떨어지는 경우가 한 번이라도 있으면 N은 소수가 아니다.
+//       if (N % i === 0) return false;
+//     }
+//     // 모두 나누어 떨어지지 않으면 N은 소수이다.
+//     return true;
+//   }
+function isPrime(num) {
+    if (num < 2) return false;
+    for (let i=2; i<= Math.sqrt(num); i++) {
+        console.log(Math.sqrt(num));
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+
 function solution(a) {
     if (a < 4) throw new Error('소수의 값이 최솟값이 아닙니다.');
     console.log(a);
+
+    let isPrime1 = isPrime(a);
+    console.log(isPrime1);
     
-    return answer;
+
+    return isPrime1;
 }
 const ans = solution(a);
 console.log(ans);
