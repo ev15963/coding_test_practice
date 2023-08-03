@@ -30,7 +30,9 @@ function another_O_n_algorithm(n) {
 }
 
 // task 3. O(log n)
-
+function O_log_n_algorithm(n) {
+    
+}
 
 // task 4. O(n2)
 function O_quadratic_algorithm(n) {
@@ -57,3 +59,7 @@ function fibonacci(n) {
     
     return fibonacci(n-1) + fibonacci(n-2);
 }
+
+// 시간복잡도 예시
+// URL : https://hanamon.kr/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-time-complexity-%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/
+// https://insight-bgh.tistory.com/505
