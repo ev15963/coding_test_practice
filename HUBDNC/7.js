@@ -15,3 +15,16 @@ let index = 1;
 let result = O_1_algorithm(arr, index);
 
 console.log(result); // 2
+
+// task 2. O(n)
+function O_n_algorithm(n) {
+    for (let i = 0; i < n; i++) {
+      // do something for 1 second
+    }
+}
+
+function another_O_n_algorithm(n) {
+    for (let i = 0; i < 2n; i++) {
+      // do something for 1 second
+    }
+}
