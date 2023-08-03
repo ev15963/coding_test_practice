@@ -26,6 +26,7 @@ const a = 5;
 //     // 모두 나누어 떨어지지 않으면 N은 소수이다.
 //     return true;
 //   }
+// URL : https://cherish-my-codes.tistory.com/entry/JavaScript-%EC%86%8C%EC%88%98-%ED%8C%90%EB%B3%84%ED%95%98%EA%B8%B0
 function isPrime(num) {
     if (num < 2) return false;
     for (let i=2; i<= Math.sqrt(num); i++) {
