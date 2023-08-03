@@ -4,3 +4,14 @@
 // 🚩 [제한사항]
 
 // - 모든 데이터는 null 값이 허용되지 않습니다.
+
+// task 1. O(1)
+function O_1_algorithm(arr, index) {
+    return arr[index];
+}
+
+let arr = [1, 2, 3, 4, 5];
+let index = 1;
+let result = O_1_algorithm(arr, index);
+
+console.log(result); // 2
