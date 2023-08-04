@@ -39,3 +39,15 @@ console.log(converter);
 const ans = converter.xml2json(test);
 
 console.log(ans);
+console.log(typeof ans);
+// string으로 된 json을 js object로 바꾸는 함수? json.parse();
+const ans2 = JSON.parse(ans);
+// ans2의 타입 알기
+console.log(typeof ans2); // to be.
+// console.log
+// task 3. shop에 있는 첫번째 food의 name 가져오기
+// before
+// const task3 = ans.elements[0].type;
+// const task3 = ans.elements[0].elements[0].elements[0].elements[0].text;
+// const task3 = ans.elements;
+// console.log(task3);
