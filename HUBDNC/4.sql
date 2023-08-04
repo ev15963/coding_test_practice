@@ -19,3 +19,18 @@
 -- 심봉사   	    90	            4
 -- 콩쥐	            65	            0
 -- 팥쥐	            52	            1
+
+-- Active: 1691127560355@@127.0.0.1@3306@HUBDNC
+CREATE TABLE problem1(  
+    `id` int(6) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '',
+    `name` VARCHAR(30) NOT NULL COMMENT '이름', 
+    `score` int(6) NOT NULL COMMENT '성적',  
+    `absent` int(6) COMMENT '결석횟수'
+) COMMENT '문제1';
+
+INSERT INTO `problem1` (`name`, `score`, `absent`) VALUES ('홍길동', 95, 1); 
+INSERT INTO `problem1` (`name`, `score`, `absent`) VALUES ('춘향이', 72, 0); 
+INSERT INTO `problem1` (`name`, `score`, `absent`) VALUES ('심청이', 85, 3); 
+INSERT INTO `problem1` (`name`, `score`, `absent`) VALUES ('심봉사', 90, 4); 
+INSERT INTO `problem1` (`name`, `score`, `absent`) VALUES ('콩쥐', 65, 0); 
+INSERT INTO `problem1` (`name`, `score`, `absent`) VALUES ('팥쥐', 52, 1); 
