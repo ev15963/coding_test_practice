@@ -34,3 +34,6 @@ INSERT INTO `problem2` (`title`, `notice_dept`, `post_date`, `view_count`) VALUE
 -- task 1. 제목, 조회수, 게시일 가져오는 테이블 쿼리
 SELECT title, view_count, post_date 
 from problem2;
+
+-- task 2. 부서별 최신 공지사항
+select notice_dept, max(post_date) from problem2 GROUP BY notice_dept;
