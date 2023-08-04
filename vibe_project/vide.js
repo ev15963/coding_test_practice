@@ -51,3 +51,7 @@ console.log(typeof ans2); // to be.
 const task3 = ans2.elements[0].elements[0].elements[0].elements[0].text;
 // const task3 = ans2.elements;
 console.log(task3);
+
+// 상추 출력
+const task3_1 = ans2.elements[0].elements[1].elements[0].elements[0].text;
+console.log(task3_1);
