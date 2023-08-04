@@ -55,3 +55,11 @@ console.log(task3);
 // 상추 출력
 const task3_1 = ans2.elements[0].elements[1].elements[0].elements[0].text;
 console.log(task3_1);
+
+// 굴, 상추 뽑기
+let arr = [];
+for (let i = 0; i<2; i++) {
+    let ans = ans2.elements[0].elements[i].elements[0].elements[0].text;
+    arr.push(ans);
+}
+console.log(arr);
