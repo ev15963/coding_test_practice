@@ -30,3 +30,7 @@ INSERT INTO `problem2` (`title`, `notice_dept`, `post_date`, `view_count`) VALUE
 ('회계팀 Q 컨퍼런스 정리 공지', '회계팀', '2023-02-05 00:00:00', 135),
 ('개발팀 Y 프로젝트 미팅 공지', '개발팀', '2023-02-06 00:00:00', 86),
 ('디자인팀 X 프로젝트 미팅 공지', '디자인팀', '2023-02-06 00:00:00', 52);
+
+-- task 1. 제목, 조회수, 게시일 가져오는 테이블 쿼리
+SELECT title, view_count, post_date 
+from problem2;
