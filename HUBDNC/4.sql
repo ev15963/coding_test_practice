@@ -25,7 +25,7 @@ CREATE TABLE problem1(
     `id` int(6) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '',
     `name` VARCHAR(30) NOT NULL COMMENT '이름', 
     `score` int(6) NOT NULL COMMENT '성적',  
-    `absent` int(6) COMMENT '결석횟수'
+    `absent` int(6) NOT NULL COMMENT '결석횟수'
 ) COMMENT '문제1';
 
 INSERT INTO `problem1` (`name`, `score`, `absent`) VALUES ('홍길동', 95, 1); 
@@ -43,5 +43,5 @@ select
         WHEN score >= 70 THEN 'C등급' 
         WHEN score >= 60 THEN 'D등급' 
         ELSE 'F등급' 
-    END as '등급'
+    END as '등급' 
 from problem1;
