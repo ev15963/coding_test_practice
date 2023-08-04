@@ -38,6 +38,7 @@ INSERT INTO `problem1` (`name`, `score`, `absent`) VALUES ('팥쥐', 52, 1);
 select 
     name as '이름', 
     CASE 
+        WHEN absent >= 4 THEN 'F등급' 
         WHEN score >= 90 THEN 'A등급' 
         WHEN score >= 80 THEN 'B등급' 
         WHEN score >= 70 THEN 'C등급' 
