@@ -14,3 +14,19 @@
 -- 4	            회계팀 Q 컨퍼런스 정리 공지	    회게팀	            2023-02-05 00:00:00	135
 -- 5	            개발팀 Y 프로젝트 미팅 공지	    개발팀	            2023-02-06 00:00:00	86
 -- 6	            디자인팀 X 프로젝트 미팅 공지	디자인팀	        2023-02-06 00:00:00	52
+
+CREATE TABLE problem2(  
+    `idx` int(6) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '고유번호',
+    `title` VARCHAR(30) NOT NULL COMMENT '제목', 
+    `notice_dept` VARCHAR(6) NOT NULL COMMENT '부서',  
+    `post_date` DATETIME NOT NULL COMMENT '게시일', 
+    `view_count` int(6) NOT NULL COMMENT '조회수'
+) COMMENT '문제2';
+
+INSERT INTO `problem2` (`title`, `notice_dept`, `post_date`, `view_count`) VALUES
+('개발팀 전체 공지', '개발팀', '2023-01-05 00:00:00', 205),
+('기획팀 전체 공지', '기획팀', '2023-01-20 00:00:00', 98),
+('디자인팀 공유 사이트 공지', '디자인팀', '2023-01-29 00:00:00', 150),
+('회계팀 Q 컨퍼런스 정리 공지', '회계팀', '2023-02-05 00:00:00', 135),
+('개발팀 Y 프로젝트 미팅 공지', '개발팀', '2023-02-06 00:00:00', 86),
+('디자인팀 X 프로젝트 미팅 공지', '디자인팀', '2023-02-06 00:00:00', 52);
