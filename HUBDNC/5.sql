@@ -37,3 +37,8 @@ from problem2;
 
 -- task 2. 부서별 최신 공지사항
 select notice_dept, max(post_date) from problem2 GROUP BY notice_dept;
+
+-- task 3. 합치기
+SELECT title, view_count, post_date 
+from problem2
+where post_date in (select max(post_date) from problem2 GROUP BY notice_dept);
