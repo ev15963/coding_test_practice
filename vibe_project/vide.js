@@ -48,6 +48,6 @@ console.log(typeof ans2); // to be.
 // task 3. shop에 있는 첫번째 food의 name 가져오기
 // before
 // const task3 = ans.elements[0].type;
-// const task3 = ans.elements[0].elements[0].elements[0].elements[0].text;
-// const task3 = ans.elements;
-// console.log(task3);
+const task3 = ans2.elements[0].elements[0].elements[0].elements[0].text;
+// const task3 = ans2.elements;
+console.log(task3);
