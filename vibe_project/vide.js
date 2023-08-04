@@ -26,6 +26,26 @@ let test = `<?xml version="1.0" encoding="UTF-8"?>
 
     </food>
 
+    <food>
+
+        <name>korea beef</name>
+
+        <sort>meet</sort>
+
+        <cost>200000000</cost>
+
+    </food>
+
+    <food>
+
+        <name>chicken</name>
+
+        <sort>chicken</sort>
+
+        <cost>300000000</cost>
+
+    </food>
+
 </shop>
 
 `;
@@ -57,9 +77,13 @@ const task3_1 = ans2.elements[0].elements[1].elements[0].elements[0].text;
 console.log(task3_1);
 
 // 굴, 상추 뽑기
+// task xml 길이 만큼 출력하기
+console.log(ans2.elements[0].elements.length);
 let arr = [];
-for (let i = 0; i<2; i++) {
+for (let i = 0; i<ans2.elements[0].elements.length; i++) {
     let ans = ans2.elements[0].elements[i].elements[0].elements[0].text;
     arr.push(ans);
 }
 console.log(arr);
+
+// 
