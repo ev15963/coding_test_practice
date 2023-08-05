@@ -24,7 +24,33 @@ INSERT INTO `problem3` (`participant`, `completion`) VALUES
 ('[’트리케라톱스’, ‘티라노사우루스’, ‘바리오닉스’]', '[’바리오닉스’, ‘티라노사우루스’]'), 
 ('[’티라노사우루스’, ‘파키케팔로사우루스’, ‘티라노사우루스’, ‘스테고사우루스’]', '[’파키케팔로사우루스,‘스테고사우루스’, ‘티라노사우루스’’]');
 
+-- task 0. varchar(60)에서 json으로 변경하기
+-- task 0.1. json용 컬럼 생성 및 기존 컬럼에서 업데이트
+ALTER TABLE problem3	ADD COLUMN participant_json JSON NOT NULL COMMENT '동굴로 이동했던 공룡들의 이름이 담긴 배열';
 
--- tase 1. ‘트리케라톱스’
+UPDATE problem3
+SET participant_json = JSON_OBJECT('key', participant);
 
--- tase 2. ‘티라노사우루스’
+ALTER TABLE problem3 ADD COLUMN completion_json JSON NOT NULL COMMENT '안전하게 피신온 공룡들의 이름이 담긴 배열';
+
+UPDATE problem3
+SET  completion_json = JSON_OBJECT('key',  completion);
+
+-- task 0.2. 기존 컬럼 삭제
+ALTER TABLE problem3
+DROP COLUMN participant;
+
+ALTER TABLE problem3
+DROP COLUMN completion;
+
+-- task 0.3. 이름 바꾸기
+ALTER TABLE problem3 
+	CHANGE participant_json participant json NOT NULL COMMENT '동굴로 이동했던 공룡들의 이름이 담긴 배열';
+
+ALTER TABLE problem3 
+	CHANGE completion_json completion json NOT NULL COMMENT '안전하게 피신온 공룡들의 이름이 담긴 배열';
+
+-- task 1. ‘트리케라톱스’
+
+-- task 2. ‘티라노사우루스’
+
