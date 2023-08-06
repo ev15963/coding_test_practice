@@ -64,3 +64,35 @@ SELECT name
 FROM problem3
 LEFT JOIN problem3 ON problem3 = completion
 WHERE completion IS NULL;
+
+-- array 배열 중 하나만 뽑아보기
+-- select * from tblDataTest where `data`->"$.id" = 1;
+SELECT participant FROM problem3 where `participant`->"$[0]"= JSON_QUOTE('트리케라톱스') LIMIT 1;
+
+SELECT * from problem3;
+SELECT *, `participant`->"$[1]" FROM problem3;
+-- json_extract(jsoncol, '$.a') = "A";
+-- "트리케라톱스"
+SELECT JSON_UNQUOTE(JSON_EXTRACT(participant, '$.key[0]')) FROM problem3;
+
+SELECT JSON_UNQUOTE(JSON_EXTRACT('{"key": "['트리케라톱스', '티라노사우루스', '바리오닉스']"}', '$.key[0]'));
+
+SELECT JSON_EXTRACT('{"key": ["트리케라톱스", "티라노사우루스", "바리오닉스"]}', '$.key[0]');
+SELECT JSON_EXTRACT('["트리케라톱스", "티라노사우루스", "바리오닉스"]', '$[1]');
+
+-- JSON_EXTRACT 존재하면 원소 출력
+SELECT *, JSON_EXTRACT(participant, '$[0]') FROM problem3;
+
+SELECT JSON_EXTRACT(completion) FROM problem3
+WHERE JSON_CONTAINS(completion, '파키케팔로사우루스', '$.key[0]');
+
+-- JSON_REMOVE 사용법
+SELECT 
+  JSON_REMOVE('["트리케라톱스", "티라노사우루스", "바리오닉스"]', "$[0]", "$[1]") AS `return`; -- 결과: '트리케라톱스'
+SELECT * FROM problem3;
+
+-- JSON_SEARCH 사용법
+SELECT JSON_SEARCH(participant, 'all', '바리오닉스') from problem3; -- "$[2]"
+
+-- JSON_CONTAINS 사용법
+SELECT JSON_CONTAINS('["트리케라톱스", "티라노사우루스", "바리오닉스"]', '["바리오닉스"]');
