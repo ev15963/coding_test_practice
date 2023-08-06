@@ -126,3 +126,8 @@ SELECT * FROM problem3;
 
 -- return 값
 select JSON_REMOVE(participant, JSON_UNQUOTE(JSON_SEARCH(participant, 'all', JSON_UNQUOTE(JSON_EXTRACT(COMPLETION, "$[0]"))))) as `return` from problem3;
+
+-- URL
+-- https://www.sqliz.com/mysql-ref/json_remove/
+-- JSON_array delete element
+-- https://dba.stackexchange.com/questions/293864/is-it-possible-to-remove-a-json-array-element-by-value-in-mysql
