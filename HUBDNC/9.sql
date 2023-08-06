@@ -96,3 +96,30 @@ SELECT JSON_SEARCH(participant, 'all', '바리오닉스') from problem3; -- "$[2
 
 -- JSON_CONTAINS 사용법
 SELECT JSON_CONTAINS('["트리케라톱스", "티라노사우루스", "바리오닉스"]', '["바리오닉스"]');
+
+select JSON_EXTRACT(COMPLETION, '$[0]') from problem3;
+select JSON_SEARCH(participant, 'all', JSON_UNQUOTE(JSON_EXTRACT(COMPLETION, '$[0]'))) from problem3 where idx=1;
+select JSON_UNQUOTE(JSON_EXTRACT(COMPLETION, '$[0]')) from problem3;
+select JSON_REMOVE(participant, JSON_UNQUOTE(JSON_SEARCH(participant, 'all', JSON_UNQUOTE(JSON_EXTRACT(COMPLETION, "$[0]"))))) as ex1 from problem3;
+select *, 
+JSON_REMOVE(participant, JSON_UNQUOTE(JSON_SEARCH(paticipant, 'all', JSON_UNQUOTE(JSON_EXTRACT(COMPLETION, "$[0]"))))) as 'ex1', 
+JSON_REMOVE(participant, JSON_UNQUOTE(JSON_SEARCH(participant, 'all', JSON_UNQUOTE(JSON_EXTRACT('ex1', "$[0]"))))) as ex2
+from problem3;
+
+SELECT
+  idx,
+  participant,
+  JSON_REMOVE(participant, path_to_remove) AS ex1,
+  JSON_REMOVE(participant, JSON_UNQUOTE(JSON_SEARCH(participant, 'all', JSON_UNQUOTE(JSON_EXTRACT(participant, path_to_remove))))) AS ex2
+FROM (SELECT
+    idx,
+    participant,
+    completion, 
+    JSON_UNQUOTE(JSON_SEARCH(participant, 'all', JSON_UNQUOTE(JSON_EXTRACT(completion, '$[0]')))) AS path_to_remove
+  FROM
+    problem3
+) CTE;
+
+select JSON_REMOVE(participant, JSON_UNQUOTE("$[2]")) from problem3 where idx=1;
+
+SELECT * FROM problem3;
