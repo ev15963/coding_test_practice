@@ -51,6 +51,7 @@ ALTER TABLE problem3
 	CHANGE completion_json completion json NOT NULL COMMENT '안전하게 피신온 공룡들의 이름이 담긴 배열';
 
 -- task 1. ‘트리케라톱스’
+select participant from problem3 WHERE idx = '1';
 
 -- task 2. ‘티라노사우루스’
 
