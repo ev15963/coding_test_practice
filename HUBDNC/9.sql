@@ -55,3 +55,12 @@ select participant from problem3 WHERE idx = '1';
 
 -- task 2. ‘티라노사우루스’
 
+SELECT participant
+FROM problem3
+WHERE completion is null;
+
+
+SELECT name
+FROM problem3
+LEFT JOIN problem3 ON problem3 = completion
+WHERE completion IS NULL;
