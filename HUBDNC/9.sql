@@ -123,3 +123,6 @@ FROM (SELECT
 select JSON_REMOVE(participant, JSON_UNQUOTE("$[2]")) from problem3 where idx=1;
 
 SELECT * FROM problem3;
+
+-- return 값
+select JSON_REMOVE(participant, JSON_UNQUOTE(JSON_SEARCH(participant, 'all', JSON_UNQUOTE(JSON_EXTRACT(COMPLETION, "$[0]"))))) as `return` from problem3;
