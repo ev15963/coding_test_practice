@@ -32,7 +32,7 @@ let test = `<?xml version="1.0" encoding="UTF-8"?>
 
         <sort>meet</sort>
 
-        <cost>200000000</cost>
+        <cost>20000</cost>
 
     </food>
 
@@ -42,7 +42,7 @@ let test = `<?xml version="1.0" encoding="UTF-8"?>
 
         <sort>chicken</sort>
 
-        <cost>300000000</cost>
+        <cost>30000</cost>
 
     </food>
 
@@ -79,11 +79,25 @@ console.log(task3_1);
 // 굴, 상추 뽑기
 // task xml 길이 만큼 출력하기
 console.log(ans2.elements[0].elements.length);
-let arr = [];
+let arr = [], arr2 = [], arr3 = [];
 for (let i = 0; i<ans2.elements[0].elements.length; i++) {
     let ans = ans2.elements[0].elements[i].elements[0].elements[0].text;
     arr.push(ans);
 }
 console.log(arr);
 
-// 
+// food들의 총 가격의 총 합 얼마인지?
+for (let i = 0; i<ans2.elements[0].elements.length; i++) {
+    let ans = ans2.elements[0].elements[i].elements[0];
+    arr2.push(ans);
+}
+console.log(arr2);
+
+const test2 = ans2;
+console.log(test2.elements[0].elements[1].elements[2].elements[0].text);
+
+for (let i=0; i<test2.elements[0].elements[1].length; i++) {
+    let ans = test2.elements[0].elements[i].elements[2].elements[0].text;
+    arr3.push(ans);
+}
+console.log(arr3);
