@@ -8,8 +8,14 @@
 // result : 징검다리를 건널 수 있는 인원 수
 
  function solution(stones, k) {
-    // task 1. 
-    var answer = 0;
+    // TODO 1. 이진 탐색 트리로 진행
+    // Math.max(...array) : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/max
+    // Math.max(값0, 값1, ... , 값N)
+    
+    let left = 1;
+    let right = Math.max(...stones);
+    console.log(right);
+
     return answer;
 }
 
