@@ -17,9 +17,28 @@ function solution(numbers) {
     // 그 기준을 가지고 서브트리를 생성
     // 말그대로 자식들이 부모를 기준으로 배치를 어떻게 할것인가
     // TODO 1. 이진트리로 표현이 가능한 부분인지를 먼저 판별
+    numbers
+    // 0111010이 58이 되는 이유??
+    // 6543210 2^5+2^4+2^3+2^1 = 32+16+8+2 = 58
+    for (let number of numbers) {
+        // 배열의 원소를 이진수로 표현
+        // js 이진수 표현하기
+        // let 십진수 = 125;
+        // console.log(`1. 10진수(${십진수}) -> 2진수(${십진수.toString(2)})`); // 1111101
+        // 출처 : https://ithub.tistory.com/290
+        number.toString(2);
+        console.log(number.toString(2));
+        
+    }
+
+    
+
+
     // TODO 2. 이진수를 바꾸게 되면 그걸 기준으로 이진트리 생성
+    // 이진트리로 표현된다 1, 안된다 0
     // TODO 3. 10진수 -> 이진트리로 변환 -> 10진수로 표현 가능한지
     // TIP 1. 재귀사용
+
     var answer = [];
     return answer;
 }
