@@ -21,22 +21,31 @@ function solution(numbers) {
     // 0111010이 58이 되는 이유??
     // 6543210 2^5+2^4+2^3+2^1 = 32+16+8+2 = 58
     for (let number of numbers) {
+
+        // TODO 2. 이진수를 바꾸게 되면 그걸 기준으로 이진트리 생성
+
+        // 이진트리로 표현된다 1, 안된다 0
         // 배열의 원소를 이진수로 표현
         // js 이진수 표현하기
         // let 십진수 = 125;
         // console.log(`1. 10진수(${십진수}) -> 2진수(${십진수.toString(2)})`); // 1111101
         // 출처 : https://ithub.tistory.com/290
-        number.toString(2);
-        console.log(number.toString(2));
+        let binary = number.toString(2);
+        console.log(binary);
+        // 이진수로 변환된 값이 홀수 갯수라면 가운데 자리 구하고, 짝수 갯수라면 앞에 0붙여서 가운데 자리 구한다.
+        // let test = 0;
+        if (binary.length % 2 != 1) {
+            // 3의 가운뎃값 2, 7의 가운뎃값 4를 구해야 함
+            binary = binary.padStart(binary.length+1, "0");
+            binary
+        }
+        binary
+        let median = Math.floor(binary.length / 2) + 1;
+        console.log(binary[median-1]);
         
     }
 
-    
 
-
-    // TODO 2. 이진수를 바꾸게 되면 그걸 기준으로 이진트리 생성
-    // 이진트리로 표현된다 1, 안된다 0
-    // TODO 3. 10진수 -> 이진트리로 변환 -> 10진수로 표현 가능한지
     // TIP 1. 재귀사용
 
     var answer = [];
