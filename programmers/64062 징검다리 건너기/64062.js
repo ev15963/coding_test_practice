@@ -1,6 +1,8 @@
 /**
  * 징검다리 건너기
  * URL : https://school.programmers.co.kr/learn/courses/30/lessons/64062
+ * 
+ * ANS : https://school.programmers.co.kr/learn/courses/30/lessons/64062/solution_groups?language=javascript
  */
 
 // stone : 디딤돌의 건널 수 있는 허용 수
@@ -41,6 +43,7 @@ function solution(stones, k) {
         console.log(maxZeros, 'maxZeros');
         console.log(consecutiveZeros, 'consecutiveZeros');
         maxZeros = Math.max(maxZeros, consecutiveZeros);
+        console.log(maxZeros, 'maxZeros');
 
     // TODO 4. k 값과 비교
     // maxZeros 값이 k 이상인 경우, right를 mid - 1로 업데이트하여 가능한 더 작은 mid 값으로 이진 탐색 범위를 조정
