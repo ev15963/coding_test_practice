@@ -20,8 +20,9 @@ function solution(numbers) {
     numbers
     // 0111010이 58이 되는 이유??
     // 6543210 2^5+2^4+2^3+2^1 = 32+16+8+2 = 58
+    
+    const answer = [];
     for (let number of numbers) {
-
         // TODO 2. 이진수를 바꾸게 되면 그걸 기준으로 이진트리 생성
 
         // 이진트리로 표현된다 1, 안된다 0
@@ -41,14 +42,15 @@ function solution(numbers) {
         }
         binary
         let median = Math.floor(binary.length / 2) + 1;
-        console.log(binary[median-1]);
+        console.log(Number(binary[median-1]));
+        answer.push(Number(binary[median-1]));
         
     }
 
+    console.log(answer);
 
     // TIP 1. 재귀사용
 
-    var answer = [];
     return answer;
 }
 
