@@ -5,6 +5,26 @@
  * @returns {const}
  */
 
+// TODO 3. 이진트리 설계하기 (재귀사용)
+function check_tree(numbers) {
+    // task 1. 만약 n의 길이가 1 이하이면 항상 참을 반환
+    if(numbers.length <= 1)
+        return true;
+    // task 2. n을 가운데에서 나눠 두 부분으로 만듦
+    const mid = Math.floor(numbers.length / 2);
+    const sub = [numbers.slice(0, mid), numbers.slice(mid+1)];
+    console.log(sub);
+    // task 3. 만약 가운데 값이 '1'이면, 두 부분 모두가 check_tree 함수의 결과가 참이어야 함
+    numbers;
+    if (numbers[mid] == '1') 
+        return sub.every(check_tree);
+    // task 4. 만약 가운데 값이 '0'이면, 두 부분 중 어느 하나도 '1'을 포함하면 안 됨
+    else
+        // !+0 true, !+1 false
+        return sub.every(numbers => !+numbers);
+    
+}
+
 function solution(numbers) {
     // 더미노드 : 문자열 뒤에 0을 추가
     // 더미노드 아닐 시 : 문자열 뒤에 1추가
@@ -21,7 +41,9 @@ function solution(numbers) {
     // 0111010이 58이 되는 이유??
     // 6543210 2^5+2^4+2^3+2^1 = 32+16+8+2 = 58
     
-    const answer = [];
+
+
+    const binary_arr = [];
     for (let number of numbers) {
         // TODO 2. 이진수를 바꾸게 되면 그걸 기준으로 이진트리 생성
 
@@ -35,25 +57,25 @@ function solution(numbers) {
         console.log(binary);
         // 이진수로 변환된 값이 홀수 갯수라면 가운데 자리 구하고, 짝수 갯수라면 앞에 0붙여서 가운데 자리 구한다.
         // let test = 0;
-        if (binary.length % 2 != 1) {
+        if (binary.length % 2 == 0) {
             // 3의 가운뎃값 2, 7의 가운뎃값 4를 구해야 함
             binary = binary.padStart(binary.length+1, "0");
-            binary
         }
         binary
-        let median = Math.floor(binary.length / 2) + 1;
-        console.log(Number(binary[median-1]));
-        answer.push(Number(binary[median-1]));
-        
+        const check_tree1 = check_tree(binary);
+        console.log(check_tree1);
+
+        // let median = Math.floor(binary.length / 2) + 1;
+        // console.log(Number(binary[median-1]));
+        // binary_arr.push(Number(binary[median-1]));
+        binary_arr.push(check_tree1);
     }
 
-    console.log(answer);
+    console.log(binary_arr);
 
-    // TIP 1. 재귀사용
-
-    return answer;
+    return binary_arr.map(Number);
 }
 
-const numbers = [7, 42, 5];
+const numbers = [63, 111, 95];//[7, 42, 5];
 const ans = solution(numbers);
 console.log(ans); // to be : [1, 1, 0]
