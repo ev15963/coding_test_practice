@@ -1,6 +1,7 @@
 /**
  * 표현 가능한 이진트리
  * URL : https://school.programmers.co.kr/learn/courses/30/lessons/150367
+ * ans : https://school.programmers.co.kr/learn/courses/30/lessons/150367/solution_groups?language=javascript
  * @param {const} numbers - 입출력 예
  * @returns {const}
  */
