@@ -2,6 +2,7 @@
  * 표현 가능한 이진트리
  * URL : https://school.programmers.co.kr/learn/courses/30/lessons/150367
  * ans : https://school.programmers.co.kr/learn/courses/30/lessons/150367/solution_groups?language=javascript
+ * etc : https://velog.io/@top1506/2023-KAKAO-%ED%91%9C%ED%98%84-%EA%B0%80%EB%8A%A5%ED%95%9C-%EC%9D%B4%EC%A7%84%ED%8A%B8%EB%A6%ACpython
  * @param {const} numbers - 입출력 예
  * @returns {const}
  */
