@@ -4,8 +4,9 @@
  */
 
 function solution(commands) {
-    // TODO 1. 50x50 크기의 표 초기화
-
+    // TODO 1. 50x50 크기의 표 null로 초기화
+    const table = new Array(50).fill(null).map(() => new Array(50).fill(null));
+    table;
 
     // TODO 2. 특정 셀이 속한 그래프의 루트를 찾는 함수
     function findRoot(r, c) {
