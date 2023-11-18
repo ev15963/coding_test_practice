@@ -7,3 +7,8 @@ function solution(commands) {
     var answer = [];
     return answer;
 }
+
+const commands = 'UPDATE 1 1 menu';
+const ans = solution(commands);
+console.log(ans);
+// to be : (1,1)에 "menu" 입력
