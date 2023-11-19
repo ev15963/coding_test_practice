@@ -30,8 +30,15 @@ function solution(commands) {
     switch (action) {
         case 'UPDATE':
             table
-            let value 
-            return value
+            let [r, c, value] = args;
+            let positionR = Number(r);
+            let positonC = Number(c);
+            positionR;
+            positonC;
+            value;
+            
+            table[r-1][c-1] = null;
+            table[r-1][c-1] = value;
         break;
 
         case 'MERGE':
