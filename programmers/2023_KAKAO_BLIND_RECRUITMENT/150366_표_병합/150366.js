@@ -3,7 +3,7 @@
  * URL : https://school.programmers.co.kr/learn/courses/30/lessons/150366
  */
 
-const commands = 'MERGE 1 2 1 3';
+const commands = 'UNMERGE 2 2';
 function solution(commands) {
     // TODO 1. 50x50 크기의 표 null로 초기화
     const table = new Array(50).fill(null).map(() => new Array(50).fill(null));
@@ -16,7 +16,7 @@ function solution(commands) {
         console.log(table[r][c]);
         if (table[r][c] === null) {
             console.log(table[r][c], 'herereee');
-            console.log([r, c]);
+            // console.log([r, c]);
             return [r, c];
         }
         console.log('dddd');
@@ -45,12 +45,21 @@ function solution(commands) {
 
     // TODO 4. 특정 셀의 병합을 해제하는 함수
     function unmergeCell(r, c) {
+        const [rootR, rootC] = findRoot(r,c);
+        for (let i=0; i< 50; i++) {
+            for (let j=0; j< 50; j++) {
+                if (findRoot(i, j)[0] === rootR && findRoot(i, j)[1] === rootC) {
+                    table[i][j] = null;
+                }
+            }
+        }
     }
 
     let [action, ...args] = commands.split(' ');
     console.log(action);
     console.log(...args);
 
+    
     switch (action) {
         case 'UPDATE':
             table
@@ -72,6 +81,10 @@ function solution(commands) {
             break;
 
         case 'UNMERGE':
+            const [ur, uc] = args.map(Number);
+            ur;
+            uc;
+            unmergeCell(ur-1, uc-1);
             break;
 
         case 'PRINT':
