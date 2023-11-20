@@ -3,7 +3,7 @@
  * URL : https://school.programmers.co.kr/learn/courses/30/lessons/150366
  */
 
-const commands = 'UPDATE 1 1 menu';
+const commands = 'PRINT 1 1';
 function solution(commands) {
     // TODO 1. 50x50 크기의 표 null로 초기화
     const table = new Array(50).fill(null).map(() => new Array(50).fill(null));
@@ -11,12 +11,27 @@ function solution(commands) {
 
     // TODO 2. 특정 셀이 속한 그래프의 루트를 찾는 함수
     function findRoot(r, c) {
-        if (table[r][c] === null) return [r, c];
+        r;
+        c;
+        console.log(table[r][c]);
+        if (table[r][c] === null) {
+            console.log(table[r][c], 'herereee');
+            console.log([r, c]);
+            return [r, c];
+        }
+        console.log('dddd');
+        console.log(...table[r][c]);
+        // const [rootR, rootC] = findRoot(...table[r][c]);
+        rootR;
+        rootC;
+        table[r][c] = [rootR, rootC];
+        console.log(table[r][c]);
+        return [rootR, rootC];
     }
     // const test = findRoot(r, c);
     // test;
     // TODO 3. 두 셀을 병합하는 함수
-    function mergeCells(r1, c1, r2, c2) {
+    function mergeCells(r1, r2, c1, c2) {
     }
 
     // TODO 4. 특정 셀의 병합을 해제하는 함수
@@ -39,16 +54,39 @@ function solution(commands) {
             
             table[r-1][c-1] = null;
             table[r-1][c-1] = value;
-        break;
+            break;
 
         case 'MERGE':
-        break;
+            let [r1, r2, c1, c2] = args.map(Number);
+            mergeCells(r1-1, r2-1, c1-1, c2-1);
+            
+            break;
 
         case 'UNMERGE':
-        break;
+            break;
 
         case 'PRINT':
-        break;
+            let [pr, pc] = args.map(Number);
+            pr;
+            pc;
+            const [rootR, rootC] = findRoot(pr-1, pc-1);
+            console.log(rootR, 'rootR');
+            console.log(rootC, 'rootC');
+            // 출력 시 null이면 EMPTY
+            if(table[rootR][rootC] == null) {
+                console.log(table[rootR][rootC]);
+                console.log('in?');
+                table[rootR][rootC] = 'EMPTY';
+            }
+            table[rootR][rootC];
+            console.log(table[rootR][rootC]);
+            table;
+            rootR;
+            rootC;
+            return table[rootR][rootC];
+
+        default:
+            break;
     }
 
     return action;
