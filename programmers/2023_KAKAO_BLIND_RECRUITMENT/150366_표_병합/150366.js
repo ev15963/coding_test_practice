@@ -55,63 +55,70 @@ function solution(commands) {
         }
     }
 
-    let [action, ...args] = commands.split(' ');
-    console.log(action);
-    console.log(...args);
+    const answer = [];
+    let output ='';
+    for (const command of commands) {
 
+        let [action, ...args] = commands.split(' ');
+        console.log(action);
+        console.log(...args);
+
+
+        switch (action) {
+            case 'UPDATE':
+                table
+                let [r, c, value] = args;
+                let positionR = Number(r);
+                let positonC = Number(c);
+                positionR;
+                positonC;
+                value;
+                
+                table[r-1][c-1] = null;
+                table[r-1][c-1] = value;
+                output = table[r-1][c-1];
+                break;
+
+            case 'MERGE':
+                let [r1, r2, c1, c2] = args.map(Number);
+                output = mergeCells(r1-1, r2-1, c1-1, c2-1);
+                
+                break;
+
+            case 'UNMERGE':
+                const [ur, uc] = args.map(Number);
+                ur;
+                uc;
+                output = unmergeCell(ur-1, uc-1);
+                break;
+
+            case 'PRINT':
+                let [pr, pc] = args.map(Number);
+                pr;
+                pc;
+                const [rootR, rootC] = findRoot(pr-1, pc-1);
+                console.log(rootR, 'rootR');
+                console.log(rootC, 'rootC');
+                // 출력 시 null이면 EMPTY
+                if(table[rootR][rootC] == null) {
+                    table[rootR][rootC] = 'EMPTY';
+                }
+                table[rootR][rootC];
+                console.log(table[rootR][rootC]);
+                table;
+                rootR;
+                rootC;
+                output = table[rootR][rootC];
+                
+                return output;
+            default:
+                break;
+        }
+        return null;
     
-    switch (action) {
-        case 'UPDATE':
-            table
-            let [r, c, value] = args;
-            let positionR = Number(r);
-            let positonC = Number(c);
-            positionR;
-            positonC;
-            value;
-            
-            table[r-1][c-1] = null;
-            table[r-1][c-1] = value;
-            break;
-
-        case 'MERGE':
-            let [r1, r2, c1, c2] = args.map(Number);
-            mergeCells(r1-1, r2-1, c1-1, c2-1);
-            
-            break;
-
-        case 'UNMERGE':
-            const [ur, uc] = args.map(Number);
-            ur;
-            uc;
-            unmergeCell(ur-1, uc-1);
-            break;
-
-        case 'PRINT':
-            let [pr, pc] = args.map(Number);
-            pr;
-            pc;
-            const [rootR, rootC] = findRoot(pr-1, pc-1);
-            console.log(rootR, 'rootR');
-            console.log(rootC, 'rootC');
-            // 출력 시 null이면 EMPTY
-            if(table[rootR][rootC] == null) {
-                table[rootR][rootC] = 'EMPTY';
-            }
-            table[rootR][rootC];
-            console.log(table[rootR][rootC]);
-            table;
-            rootR;
-            rootC;
-            return table[rootR][rootC];
-
-        default:
-            break;
     }
 
-    return action;
-
-    // const answer = [];
+    answer.push(output);
 
 
 }
