@@ -1,6 +1,7 @@
 /**
  * 표 병합
  * URL : https://school.programmers.co.kr/learn/courses/30/lessons/150366
+ * ans : https://school.programmers.co.kr/learn/courses/30/lessons/150366/solution_groups?language=javascript
  */
 
 const commands = 'UNMERGE 2 2';
