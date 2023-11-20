@@ -3,7 +3,7 @@
  * URL : https://school.programmers.co.kr/learn/courses/30/lessons/150366
  */
 
-const commands = 'PRINT 1 1';
+const commands = 'MERGE 1 2 1 3';
 function solution(commands) {
     // TODO 1. 50x50 크기의 표 null로 초기화
     const table = new Array(50).fill(null).map(() => new Array(50).fill(null));
@@ -32,6 +32,15 @@ function solution(commands) {
     // test;
     // TODO 3. 두 셀을 병합하는 함수
     function mergeCells(r1, r2, c1, c2) {
+        const [root1R, root1C] = findRoot(r1, c1);
+        const [root2R, root2C] = findRoot(r2, c2);
+        console.log(root1R, 'root1R');
+
+        if(root1R !== root2R || root1C !== root2C) {
+            table[root1R][root1C] = table[root2R][root2C];
+            console.log(table[root1R][root1C], 'table[root1R][root1C]');
+            console.log(table, 'table');
+        }
     }
 
     // TODO 4. 특정 셀의 병합을 해제하는 함수
@@ -74,8 +83,6 @@ function solution(commands) {
             console.log(rootC, 'rootC');
             // 출력 시 null이면 EMPTY
             if(table[rootR][rootC] == null) {
-                console.log(table[rootR][rootC]);
-                console.log('in?');
                 table[rootR][rootC] = 'EMPTY';
             }
             table[rootR][rootC];
