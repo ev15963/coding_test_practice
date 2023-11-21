@@ -2,6 +2,7 @@
  * 표 병합
  * URL : https://school.programmers.co.kr/learn/courses/30/lessons/150366
  * ans : https://school.programmers.co.kr/learn/courses/30/lessons/150366/solution_groups?language=javascript
+ * 참고 : https://velog.io/@top1506/2023-KAKAO-%ED%91%9C-%EB%B3%91%ED%95%A9python
  */
 
 const commands = 'UNMERGE 2 2';
