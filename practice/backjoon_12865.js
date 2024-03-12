@@ -58,3 +58,14 @@
 //         m.solution(j,time, 0,0,0);
 //         System.out.println(answer);
 //     }
+
+const input = [ [5, 20], [10, 5], [25, 12], [15, 8], [6, 3], [7, 4]];
+
+public class DFS3 {
+	
+}
+
+
+function solution(int[] j, int[] time, int L, int sum, int total_time) {
+	return answer;
+}
