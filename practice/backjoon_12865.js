@@ -25,3 +25,36 @@
  */
 
 // url : https://www.acmicpc.net/problem/12865
+
+// JAVA 예시
+// public class DFS3 {
+
+//     static int answer = Integer.MIN_VALUE, limit_time;
+
+//     public void solution(int[] j, int[] time, int L, int sum, int total_time){
+//         if(total_time > limit_time) return;
+//         if(L == j.length){
+//             answer = Integer.max(sum, answer);
+//         }else{
+//             solution(j, time, L+1, sum+j[L], total_time+time[L]);
+//             solution(j, time, L+1, sum, total_time);
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         DFS3 m = new DFS3();
+
+//         Scanner in = new Scanner(System.in);
+//         int n = in.nextInt();
+//         limit_time = in.nextInt();
+
+//         int[] j = new int[n];
+//         int[] time = new int[n];
+//         for (int i = 0; i < n; i++) {
+//             j[i] = in.nextInt();
+//             time[i] = in.nextInt();
+//         }
+
+//         m.solution(j,time, 0,0,0);
+//         System.out.println(answer);
+//     }
