@@ -9,7 +9,20 @@ function solution(triangle) {
         for (let j=0; j<triangle[i].length; j++) {
             // 7에서 3이나 8로 이동
             console.log(triangle[i][j]);
-            
+
+            // sum += triangle[i];
+
+            if(triangle[i][0]) {
+            // 시작 영역
+
+            } else if(triangle[i][triangle[i].length-1]) {
+            // 끝  
+
+            } else {
+            // 중간 영역
+
+            }
+
         }
     }
 
