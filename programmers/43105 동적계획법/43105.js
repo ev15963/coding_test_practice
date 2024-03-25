@@ -12,15 +12,19 @@ function solution(triangle) {
 
             // sum += triangle[i];
 
-            if(triangle[i][0]) {
+            if(j==0) {
             // 시작 영역
-
-            } else if(triangle[i][triangle[i].length-1]) {
+                triangle[i][j] += triangle[i - 1][j];
+                console.log(triangle[i][j], 'if');
+            } else if(j==triangle[i].length-1) {
             // 끝  
-
+                triangle[i][j] += triangle[i - 1][j - 1];
+                console.log(triangle[i][j], 'elif');
             } else {
             // 중간 영역
-
+                let max_num = Math.max(triangle[i-1][j-1], triangle[i-1][j]);
+                triangle[i][j] += max_num;
+                console.log(triangle[i][j], 'else');
             }
 
         }
