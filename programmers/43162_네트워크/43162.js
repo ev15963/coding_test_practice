@@ -10,17 +10,19 @@ const computers = [
 function DFS(computers, node, visited) {
     console.log(node, "node");
     visited[node] = true;
-    console.log(computers.length, "computers.length");
+    console.log(visited[node], `visited[${node}]`);
     for (let i = 0; i < computers.length; i++) {
         console.log("in");
+        console.log(i, "i");
         // todo. 연결되는 노드가 있고 방문하지 않았다면 dfs로 진행
-        console.log(computers[node][i], "computers[node][i]");
-        console.log(visited[i], "visited[i]");
+        console.log(computers[node][i], `computers[${node}][${i}]`);
+        console.log(visited[i], `visited[${i}]`);
         
         if (computers[node][i] == 1 && !visited[i]) {
-            console.log(!visited[i], '!visited[i]');
-            console.log(visited[i]==false, 'visited[i]==false');
-            console.log("in222");
+            console.log(computers[node][i], `computers[${node}][${i}]`);
+            // console.log(!visited[i], '!visited[i]');
+            // console.log(visited[i]==false, 'visited[i]==false');
+            // console.log("in222");
             DFS(computers, i, visited);
         }
     }
@@ -38,8 +40,12 @@ function solution(n, computers) {
 
     for (let i = 0; i < n; i++) {
         if (!visited[i]) {
+            // console.log('computers', computers);
+            console.log('i', i);
+            console.log('visited', visited);
             DFS(computers, i, visited);
             answer++;
+            console.log(answer, 'answer counting');
         }
     }
     return answer;
