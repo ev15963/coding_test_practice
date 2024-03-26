@@ -1,4 +1,4 @@
-URL: https://velog.io/@longroadhome/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-LV.3-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC
+// URL: https://velog.io/@longroadhome/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-LV.3-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC
 
 const n = 3;
 const computers = [
@@ -12,15 +12,16 @@ function DFS(computers, node, visited) {
     visited[node] = true;
     console.log(computers.length, "computers.length");
     for (let i = 0; i < computers.length; i++) {
-        // console.log("in");
+        console.log("in");
         // todo. 연결되는 노드가 있고 방문하지 않았다면 dfs로 진행
-        // console.log(computers[node][i], "computers[node][i]");
-        // console.log(visited[i], "visited[i]");
-        //
+        console.log(computers[node][i], "computers[node][i]");
+        console.log(visited[i], "visited[i]");
+        
         if (computers[node][i] == 1 && !visited[i]) {
-            //   // console.log("in222");
-            //   // console.log(visited[i] == false, "ddd");
-            DFS(computers, node, visited);
+            console.log(!visited[i], '!visited[i]');
+            console.log(visited[i]==false, 'visited[i]==false');
+            console.log("in222");
+            DFS(computers, i, visited);
         }
     }
 }
