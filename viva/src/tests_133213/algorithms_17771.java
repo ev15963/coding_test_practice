@@ -4,11 +4,15 @@ public class algorithms_17771 {
     public static void main(String[] args) {
         // 입력 문자열 s
         String s = "111999333";
+        String s1 = "000";
+        String s2 = "123456789";
 
         System.out.println("answer");
 
         // findCoolNumber 메소드 호출하여 결과 출력
         System.out.println(findCoolNumber(s));
+        System.out.println(findCoolNumber(s1));
+        System.out.println(findCoolNumber(s2));
     }
 
     // 가장 큰 멋쟁이 숫자를 찾는 메소드
