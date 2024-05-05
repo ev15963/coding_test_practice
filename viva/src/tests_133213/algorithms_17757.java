@@ -22,6 +22,9 @@ public class algorithms_17757 {
             }
 
             // 가장 왼쪽 숫자가 0일 경우
+            if (i == 0 && c == '0' && amountText.charAt(i + 1) != ',') {
+                return false;
+            }
 
             // 쉼표의 위치와 개수 체크
         }
