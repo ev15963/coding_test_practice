@@ -13,7 +13,7 @@ public class algorithms_17757 {
         System.out.println("========");
         System.out.println(amountText.length()); // 9 5 4
         // 옳은 금액인지 확인
-        for (int i = 0; i < amountText.length(); i++) {
+        for (int i = amountText.length() - 1; i >= 0; i--) {
             char c = amountText.charAt(i);
 
             // 금액에 0~9 사이 숫자 또는 쉼표 포함
@@ -27,6 +27,16 @@ public class algorithms_17757 {
             }
 
             // 쉼표의 위치와 개수 체크
+            if (c == ',') {
+                commaCount++;
+                // 쉼표 위치는 오른쪽 부터 시작해서 숫자 3개 단위 뒤 1개씩 나타나야함
+                if (digits != 3 || commaCount == 0 || commaCount % 3 == 0) {
+                    return false;
+                }
+                digits = 0;
+            } else {
+                digits++;
+            }
         }
 
         // 마지막 세 자리가 쉼표로 끝나면 옳지 않은 금액임
