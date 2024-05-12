@@ -5,6 +5,20 @@ public class algorithms_17766 {
         // 가치의 총합
         int totalValue = 0;
 
+        // TODO.1 가진 금액 중 구매할 수 있는 가치를 찾기
+        for (int[] stock : stocks) {
+            System.out.println(stock);
+            int value = stock[0];
+            int price = stock[1];
+
+            // 경우의수를 도입해서 적당한 price 선택하기
+            if (money >= price) {
+
+            }
+            totalValue += value;
+
+        }
+
         return totalValue;
     }
 
