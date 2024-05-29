@@ -8,6 +8,12 @@ function solution(tickets, roll, shop, money) {
     console.log(ticketPrices, "ticketPrices"); // { A: 1, B: 2, C: 5, D: 3 }
   }
 
+  // 각 상점 상태에서 구매 과정
+  let maxGoldenTickets = 0;
+  let currentMoney = 0;
+  for (let count = 0; count < shop.length - 1; count++) {
+    currentMoney = money - count * roll;
+  }
 
   return answer;
 }
