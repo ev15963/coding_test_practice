@@ -15,7 +15,7 @@ function solution(tickets, roll, shop, money) {
     currentMoney = money - count * roll;
   }
 
-  return answer;
+  return currentMoney;
 }
 // 테스트 케이스
 const tickets1 = ["A 1", "B 2", "C 5", "D 3"]; // 일반 티켓의 종류
