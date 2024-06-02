@@ -8,15 +8,68 @@ function solution(tickets, roll, shop, money) {
     console.log(ticketPrices, "ticketPrices"); // { A: 1, B: 2, C: 5, D: 3 }
   }
 
-  // 각 상점 상태에서 구매 과정
+  // 각 상점 상태에서 구매 시뮬레이션
   let maxGoldenTickets = 0;
-  let currentMoney = 0;
-  for (let count = 0; count < shop.length - 1; count++) {
-    currentMoney = money - count * roll;
+
+  for (let shopRow = 0; shopRow <= shop.length - 1; shopRow++) {
+    console.log(shopRow, "shopRow");
+    console.log(money, "money");
+    console.log(roll, "roll");
+    let currentMoney = money - shopRow * roll;
+    if (currentMoney < 0) {
+      break;
+    }
+
+    // 상품 진열 순회
+    const ticketCount = {};
+    for (let i = 0; i <= shopRow; i++) {
+      for (const ticket of shop[i]) {
+        console.log(!ticketCount[ticket], `!ticketCount[${ticket}]`);
+        if (!ticketCount[ticket]) {
+          ticketCount[ticket] = 0;
+        }
+        ticketCount[ticket]++;
+      }
+    }
+    console.log(ticketCount, "ticketCount");
+
+    // 티켓 구매
+    for (let i = 0; i <= shopRow; i++) {
+      for (const ticket of shop[i]) {
+        const price = ticketPrices[ticket];
+        console.log(price, "price");
+        while (currentMoney >= price && ticketCount[ticket] > 0) {
+          currentMoney -= price;
+          ticketCount[ticket]--;
+          console.log(
+            !ticketCount[ticket + "_purchased"],
+            `!ticketCount[${ticket} + "_purchased"]`
+          );
+          if (!ticketCount[ticket + "_purchased"]) {
+            ticketCount[ticket + "_purchased"] = 0;
+          }
+          ticketCount[ticket + "_purchased"]++;
+        }
+      }
+    }
+    console.log(ticketCount, "ticketCount2");
+
+    // 황금 티켓 계산
+    let goldenTickets = 0;
+    for (const key in ticketCount) {
+      console.log(key, "key");
+      if (key.endsWith("_purchased")) {
+        const count = ticketCount[key];
+        goldenTickets += Math.floor(count / 3);
+      }
+    }
+    console.log(goldenTickets, "goldenTickets");
+    maxGoldenTickets = Math.max(maxGoldenTickets, goldenTickets);
   }
 
-  return currentMoney;
+  return maxGoldenTickets;
 }
+
 // 테스트 케이스
 const tickets1 = ["A 1", "B 2", "C 5", "D 3"]; // 일반 티켓의 종류
 const roll1 = 10; // 상점 새로고침 비용
