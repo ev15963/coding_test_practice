@@ -80,3 +80,13 @@ const shop1 = [
 ]; // 상점의 티켓 진열 예측
 const money1 = 30; //주어진 자금
 console.log(solution(tickets1, roll1, shop1, money1)); // 출력: 2 // 모을 수 있는 황금 티켓 개수의 최댓값
+
+const tickets2 = ["A 1", "B 2", "C 5", "D 3"];
+const roll2 = 10;
+const shop2 = [
+  ["B", "C", "B", "C"],
+  ["A", "A", "A", "B"],
+  ["D", "D", "C", "D"],
+];
+const money2 = 100;
+console.log(solution(tickets2, roll2, shop2, money2)); // 출력: 4
