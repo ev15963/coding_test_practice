@@ -10,3 +10,19 @@ package 자료구조;
 // 배열의 각 자릿값을 정수형으로 변환하여 sum에 더하여 누적하기
 // }
 // sum 출력하기
+
+import java.util.Scanner;
+
+public class P11720_숫자의합 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        String sNum = sc.next();
+        char[] cNum = sNum.toCharArray();
+        int sum = 0; // 초기화
+        for (int i = 0; i < cNum.length; i++) {
+            sum += cNum[i] - '0'; // or 48
+        }
+        System.out.println(sum);
+    }
+}
