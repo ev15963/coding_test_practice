@@ -24,6 +24,18 @@ public class P11659_구간합구하기 {
         // 숫자 갯수, 질의 갯수 저장하기
         // 숫자 갯수 : suNo
         // 질의 갯수 : quizNo
+
+        // bufferReader.readLine() :
+        // stringTokenizer : 구분자 (delim 기준 : \t[탭], \n[줄바꿈], \r[공백생략])
+        // stringTokenizer.nextToken() : 구분하고 다음 단언
+
+        // test case
+        // 5 3
+        // 5 4 3 2 1
+        // 1 3 -> 12
+        // 2 4 -> 9
+        // 5 5 -> 1
+
         BufferedReader bufferReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferReader.readLine());
         int suNo = Integer.parseInt(stringTokenizer.nextToken());
