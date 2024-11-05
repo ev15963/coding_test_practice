@@ -15,6 +15,10 @@ import java.util.StringTokenizer;
 // 구간 합 출력하기 (S[i] - S[i - 1])
 // }
 
+// 추가 참고 
+// 백준 구간합 11659 자바
+// https://ryuls.tistory.com/8
+
 public class P11659_구간합구하기 {
     public static void main(String[] args) throws IOException {
         // 숫자 갯수, 질의 갯수 저장하기
