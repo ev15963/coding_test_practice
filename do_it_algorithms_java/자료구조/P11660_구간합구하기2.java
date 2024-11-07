@@ -39,5 +39,12 @@ public class P11660_구간합구하기2 {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
+        // 배열 입력과 동시에 합배열 구하기
+        int [][] S = new int[N+1][N+1];
+        for (int i = 0; i< N+1; i++) {
+            for (int j = 0; j < N+1; j++) {
+                
+            }
+        }
     }
 }
