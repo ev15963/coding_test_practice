@@ -34,6 +34,10 @@ public class P11660_구간합구하기2 {
 
         BufferReader br = new BufferReader (new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        
+
+        // 변수 선언
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+
     }
 }
