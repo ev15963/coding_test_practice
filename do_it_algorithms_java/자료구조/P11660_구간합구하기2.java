@@ -17,7 +17,7 @@ public class P11660_구간합구하기2 {
         // 1 1 4 4 -> 64
 
         // 배열크기
-        // 크기) M(질의 수) 저장하기
+        // N(배열 크기) M(질의 수) 저장하기
         // (N만큼 반복하기) {
         // for (N만큼 반복하기) {
         // 원본 배열 저장하기
@@ -42,11 +42,17 @@ public class P11660_구간합구하기2 {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
-        // 배열 입력과 동시에 합배열 구하 기
-        int[][] S = new int[N + 1][N + 1];
+        // 배열 입력과 동시에 합배열 구하기
+        int S[][] = new int[N + 1][N + 1];
 
-        for (int j = 0; j < N + 1; j++) {
-
+        // N(배열 크기) M(질의 수) 저장하기
+        for (int i = 1; i <= N; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 1; j <= N; j++) {
+                S[i][j] = Integer.parseInt(st.nextToken());
+                System.out.println(S[i][j]);
+            }
         }
+
     }
 }
