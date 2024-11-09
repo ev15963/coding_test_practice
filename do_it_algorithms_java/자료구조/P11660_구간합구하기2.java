@@ -50,9 +50,17 @@ public class P11660_구간합구하기2 {
             st = new StringTokenizer(br.readLine());
             for (int j = 1; j <= N; j++) {
                 S[i][j] = Integer.parseInt(st.nextToken());
-                System.out.println(S[i][j]);
             }
         }
 
+        // 합배열 저장하기
+        int D[][] = new int[N + 1][N + 1];
+
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N; j++) {
+                D[i][j] = D[i][j + 1] + D[i - 1][j] - D[i - 1][j - 1] + S[i][j];
+                System.out.println(D[i][j]);
+            }
+        }
     }
 }
