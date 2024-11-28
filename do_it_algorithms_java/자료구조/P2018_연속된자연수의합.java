@@ -31,5 +31,14 @@ public class P2018_연속된자연수의합 {
     Scanner sc = new Scanner(System.in);
     int N = sc.nextInt();
 
+    while (end_index != N) {
+      if (sum == N) {
+        count++;
+      } else if (sum > N) {
+        start_index++;
+      } else if (sum < N) {
+        end_index++;
+      }
+    }
   }
 }
