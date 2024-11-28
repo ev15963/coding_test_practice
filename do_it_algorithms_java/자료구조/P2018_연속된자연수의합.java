@@ -18,6 +18,12 @@ package 자료구조;
 
 public class P2018_연속된자연수의합 {
   public static void main(String[] args) {
+
+    // 변수 초기화
+    int count = 1;
+    int start_index = 1;
+    int end_index = 1;
+    int sum = 1;
     
   }
 }
