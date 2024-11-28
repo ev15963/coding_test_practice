@@ -31,13 +31,18 @@ public class P2018_연속된자연수의합 {
     Scanner sc = new Scanner(System.in);
     int N = sc.nextInt();
 
+    // 연속된 자연수의 합 구하기
     while (end_index != N) {
       if (sum == N) {
         count++;
+        end_index++;
+        sum = sum + end_index;
       } else if (sum > N) {
+        sum = sum - start_index;
         start_index++;
       } else if (sum < N) {
         end_index++;
+        sum = sum + end_index;
       }
     }
   }
