@@ -1,5 +1,7 @@
 package 자료구조;
 
+import java.util.Scanner;
+
 // test case
 // input
 // 15
@@ -24,6 +26,10 @@ public class P2018_연속된자연수의합 {
     int start_index = 1;
     int end_index = 1;
     int sum = 1;
-    
+
+    // test case 입력 받아서 변수 초기화
+    Scanner sc = new Scanner(System.in);
+    int N = sc.nextInt();
+
   }
 }
