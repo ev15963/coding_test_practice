@@ -1,5 +1,10 @@
 package 자료구조;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 // test case
 // 6 재료의 갯수
 // 9 갑옷이 완성되는 번호의 합
@@ -17,5 +22,15 @@ package 자료구조;
 // 재료 합 == 갑옷이 완성되는 번호의 합 -> 경우의 수 증가, 작은 번호 재료 한칸 위로, 큰 번호 재료 한칸 아래로 (i와 j가 엇갈리면 i>j가 되서 while문 종료)
 
 public class P1940_주몽 {
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        // 재료의 갯수 및 번호의 합 저장
+        int N = Integer.parseInt(st.nextToken()); // 6
+        int M = Integer.parseInt(st.nextToken()); // 9
+
+    }
 
 }
