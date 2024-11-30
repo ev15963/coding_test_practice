@@ -3,6 +3,7 @@ package 자료구조;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // test case
@@ -25,11 +26,20 @@ public class P1940_주몽 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
         // 재료의 갯수 및 번호의 합 저장
-        int N = Integer.parseInt(st.nextToken()); // 6
-        int M = Integer.parseInt(st.nextToken()); // 9
+        int N = Integer.parseInt(br.readLine()); // 6
+        int M = Integer.parseInt(br.readLine()); // 9
+
+        // 입력된 재료들 배열로 저장
+        int sum[] = new int[N];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
+            sum[i] = Integer.parseInt(st.nextToken());
+        }
+
+        System.out.println(Arrays.toString(sum));
 
     }
 
