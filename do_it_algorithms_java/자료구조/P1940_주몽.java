@@ -44,7 +44,7 @@ public class P1940_주몽 {
 
         // i < j일 동안 투포인터
         int i = 1;
-        int j = 1;
+        int j = N - 1;
 
         // 경우의 수
         int count = 0;
