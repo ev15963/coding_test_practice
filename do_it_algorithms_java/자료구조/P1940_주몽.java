@@ -39,8 +39,28 @@ public class P1940_주몽 {
             sum[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(Arrays.toString(sum));
+        // 재료 배열 정렬
+        Arrays.sort(sum);
 
+        // i < j일 동안 투포인터
+        int i = 1;
+        int j = 1;
+
+        // 경우의 수
+        int count = 0;
+
+        while (i < j) {
+            if (sum[i] + sum[j] < M) {
+                i++;
+            } else if (sum[i] + sum[j] > M) {
+                j--;
+            } else if (sum[i] + sum[j] == M) {
+                count++;
+                i++;
+                j--;
+            }
+        }
+        System.out.println(count);
     }
 
 }
