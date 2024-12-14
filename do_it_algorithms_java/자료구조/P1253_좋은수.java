@@ -2,6 +2,7 @@ package 자료구조;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 문제
@@ -17,16 +18,45 @@ import java.util.StringTokenizer;
 public class P1253_좋은수 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        // StringTokenizer st = new StringTokenizer(br.readLine());
+        int num = Integer.parseInt(br.readLine());
+
+        long S[] = new long[num];
+
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int num = Integer.parseInt(st.nextToken());
-
-        int S[] = new int[num];
-
         for (int i = 0; i < num; i++) {
-            st = new StringTokenizer(br.readLine());
             S[i] = Integer.parseInt(st.nextToken());
 
         }
 
+        // 정렬
+        Arrays.sort(S);
+
+        // 투포인터 구하기
+        int i = 0;
+        int j = num - 1;
+
+        // 경우의 수
+        int count = 0;
+        for (int idx = 0; idx < num; idx++) {
+            while (i < j) {
+                if (S[i] + S[j] == S[idx]) {
+                    if (i != idx && j != idx) {
+                        count++;
+                        break;
+                    } else if (i == idx) {
+                        i++;
+                    } else if (j == idx) {
+                        j--;
+                    }
+                } else if (S[i] + S[j] < S[idx]) {
+                    i++;
+                } else {
+                    j--;
+                }
+            }
+
+        }
+        System.out.println(count);
     }
 }
