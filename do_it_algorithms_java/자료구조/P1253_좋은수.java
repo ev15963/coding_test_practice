@@ -32,13 +32,17 @@ public class P1253_좋은수 {
         // 정렬
         Arrays.sort(S);
 
-        // 투포인터 구하기
-        int i = 0;
-        int j = num - 1;
-
         // 경우의 수
         int count = 0;
         for (int idx = 0; idx < num; idx++) {
+
+            // 투포인터 구하기
+            // ** i와 j를 초기화한 후, 모든 idx 값에 대해 반복문을 실행해야 하지만,
+            // ** i와 j를 매번 초기화하지 않아서 문제가 발생
+            // ** 투포인터 초기화 해야함
+            int i = 0;
+            int j = num - 1;
+
             while (i < j) {
                 if (S[i] + S[j] == S[idx]) {
                     if (i != idx && j != idx) {
@@ -51,7 +55,7 @@ public class P1253_좋은수 {
                     }
                 } else if (S[i] + S[j] < S[idx]) {
                     i++;
-                } else {
+                } else if (S[i] + S[j] > S[idx]) {
                     j--;
                 }
             }
