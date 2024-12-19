@@ -18,6 +18,6 @@ public class P12891_DNA_비밀번호 {
         int S = Integer.parseInt(st.nextToken());
         int P = Integer.parseInt(st.nextToken());
 
-        
+        // DNA 문자열 
     }
 }
