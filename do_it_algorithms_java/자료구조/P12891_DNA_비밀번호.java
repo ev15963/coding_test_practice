@@ -14,6 +14,10 @@ public class P12891_DNA_비밀번호 {
         Bufferedreader bf = new Bufferedreader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
+        // 변수 선언
+        int S = Integer.parseInt(st.nextToken());
+        int P = Integer.parseInt(st.nextToken());
+
         
     }
 }
