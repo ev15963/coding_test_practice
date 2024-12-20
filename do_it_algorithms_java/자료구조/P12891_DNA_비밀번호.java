@@ -19,5 +19,10 @@ public class P12891_DNA_비밀번호 {
         int P = Integer.parseInt(st.nextToken());
 
         // DNA 문자열 
+        char[] str = br.readLine().toCharArray();
+
+        // 각 문자 최소 갯수 배열
+        st = new StringTokenizer(br.readLine());
+        
     }
 }
