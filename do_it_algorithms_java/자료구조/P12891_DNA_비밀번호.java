@@ -42,10 +42,23 @@ public class P12891_DNA_비밀번호 {
             if (str[i] == "G") myArr[2]++;
             if (str[i] == "T") myArr[3]++; 
         }
-
-        
-        
         if(checkCounting()) answer++;
+
+        // 부분 문자열 (슬라이딩 윈도우 움직이는 횟수)
+        for (int j = P; j < S; j++){
+            // ex) j = 8, P = 8, i = 0
+            int i = j-P;
+            
+            if (str[i] == "A") myArr[0]--;
+            if (str[i] == "C") myArr[1]--;
+            if (str[i] == "G") myArr[2]--;
+            if (str[i] == "T") myArr[3]--; 
+
+            if (str[j] == "A") myArr[0]++;
+            if (str[j] == "C") myArr[1]++;
+            if (str[j] == "G") myArr[2]++;
+            if (str[j] == "T") myArr[3]++; 
+        }
     }
 
     public static boolean checkCounting() {
