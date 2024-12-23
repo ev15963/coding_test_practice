@@ -8,6 +8,10 @@ package 자료구조;
 // output
 // 0
 
+// 참고
+// https://jyeonnyang2.tistory.com/321
+// https://velog.io/@richsubin/%EB%B0%B1%EC%A4%80-12891%EB%B2%88-DNA-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-JAVA
+
 public class P12891_DNA_비밀번호 {
     public static void main(String[] args) throws IOException {
         // S, P 입력 값 받기
