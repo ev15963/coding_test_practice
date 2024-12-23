@@ -31,5 +31,16 @@ public class P12891_DNA_비밀번호 {
         for (int i=0; i<4; i++) {
             checkArr[i] = Integer.parseInt(st.nextToken());
         }
+
+        // A C G T에 따라 myArr에 추가
+        int[] myArr = new int[4];
+
+        // 주어진 패스워드 길이에 따라 슬라이딩 초기화 과정 
+        for (int i = 0; i < P; i++) {
+            if (str[i] == "A") myArr[0]++;
+            if (str[i] == "C") myArr[1]++;
+            if (str[i] == "G") myArr[2]++;
+            if (str[i] == "T") myArr[3]++; 
+        }
     }
 }
