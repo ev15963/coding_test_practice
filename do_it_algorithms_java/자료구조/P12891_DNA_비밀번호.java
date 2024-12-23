@@ -42,5 +42,18 @@ public class P12891_DNA_비밀번호 {
             if (str[i] == "G") myArr[2]++;
             if (str[i] == "T") myArr[3]++; 
         }
+
+        
+        
+        if(checkCounting()) answer++;
+    }
+
+    public static boolean checkCounting() {
+        for (int i =0; i<4; i++) {
+            if (myArr[i] < checkArr[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
