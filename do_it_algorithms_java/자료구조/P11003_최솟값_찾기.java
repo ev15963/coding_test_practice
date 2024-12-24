@@ -10,6 +10,7 @@ package 자료구조;
 
 public class P11003_최솟값_찾기 {
     public static void main(String[] args) throws IOException {
-
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
   }
 }
