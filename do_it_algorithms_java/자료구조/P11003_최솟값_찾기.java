@@ -7,6 +7,8 @@ package 자료구조;
 // output
 // 1 1 1 2 2 2 2 2 3 3 2 2
 
+// 참고
+// https://g-db.tistory.com/entry/JAVA-%EB%B0%B1%EC%A4%80-11003-%EB%8D%B1
 
 public class P11003_최솟값_찾기 {
     public static void main(String[] args) throws IOException {
@@ -18,5 +20,12 @@ public class P11003_최솟값_찾기 {
 
         // L : 배열의 수를 비교할 최대 길이, 여기선 3
         int L = Integer.parseInt(st.nextToken());
+
+        // 배열의 요소 할당하기
+        st = new StringTokenizer(br.readLine());
+        
+        for (int i = 0; i < N; i++) {
+            st.
+        }
   }
 }
