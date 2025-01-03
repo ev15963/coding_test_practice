@@ -1,5 +1,14 @@
 package 자료구조;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.StringTokenizer;
+
+import javafx.scene.Node;
+
 // test case
 // input
 // 12 3
@@ -23,9 +32,12 @@ public class P11003_최솟값_찾기 {
 
         // 배열의 요소 할당하기
         st = new StringTokenizer(br.readLine());
-        
+
+        Deque<Node> deque = new ArrayDeque();
+
         for (int i = 0; i < N; i++) {
-            st.
+            int nowNum = Integer.parseInt(st.nextToken());
+
         }
-  }
+    }
 }
