@@ -52,8 +52,10 @@ public class P11003_최솟값_찾기 {
             // 덱의 마지막 위치에 now값 저장하기
             deque.addList(new Node(now, i));
             
-            // 덱의 1번째 위치에서부터 L의 범위를 벗어난 값(index < now index - L)을 덱에서 제거
-            
+            // 덱의 1번째 위치에서부터 L의 범위를 벗어난 값(i - deque.getFirst().index > L)을 덱에서 제거
+            if (i - deque.getFirst().index > L) {
+                deque.removeFirst();
+            }
             // 덱의 1번째 데이터 출력하기
             
         }
