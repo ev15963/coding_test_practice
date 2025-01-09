@@ -57,8 +57,12 @@ public class P11003_최솟값_찾기 {
                 deque.removeFirst();
             }
             // 덱의 1번째 데이터 출력하기
-            
+            bw.write(deque.getFirst().value+ " ");
         }
+        // 버퍼 안에 있는 문자열이 출력
+        bw.flush();
+        // 스트림 종료
+        bw.close();
     }
     // 덱에 저장할 노드 클래스 별도 생성하기
     static class Node {
