@@ -53,7 +53,20 @@ public class P11003_최솟값_찾기 {
             deque.addList(new Node(now, i));
             
             // 덱의 1번째 위치에서부터 L의 범위를 벗어난 값(index < now index - L)을 덱에서 제거
+            
             // 덱의 1번째 데이터 출력하기
+            
+        }
+    }
+    // 덱에 저장할 노드 클래스 별도 생성하기
+    static class Node {
+        public int value;
+        public int index;
+
+        // 노드클래스 index(자신위치), value(자산의 값) 담기
+        Node(value, index) {
+            value = this.value;
+            index = this.index;
         }
     }
 }
