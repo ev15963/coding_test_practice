@@ -40,9 +40,18 @@ public class P11003_최솟값_찾기 {
         Deque<Node> deque = new ArrayDeque();
 
         for (int i = 0; i < N; i++) {
+            // 1 5 2 3 6 2 3 7 3 5 2 6 nowNun에 하나씩 들어감
             int nowNum = Integer.parseInt(st.nextToken());
+            
             // 덱의 마지막 위치 부터 now 보다 큰 값은 덱에서 제거
+            // 덱이 비지 않았고 now 보다 기존 값이 큰 경우 기존 값을 제거
+            while (!deque && now < deque.getLast().value) {
+                deque.removeLast();
+            }
+            
             // 덱의 마지막 위치에 now값 저장하기
+            deque.addList(new Node(now, i));
+            
             // 덱의 1번째 위치에서부터 L의 범위를 벗어난 값(index < now index - L)을 덱에서 제거
             // 덱의 1번째 데이터 출력하기
         }
