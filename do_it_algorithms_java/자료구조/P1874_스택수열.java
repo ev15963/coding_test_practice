@@ -29,8 +29,14 @@ package 자료구조;
 // -
 // -
 
+// 참고
+// https://st-lab.tistory.com/182
+// Stringbuilder를 쓰는 이유 -> 여러 객체를 생성하기보다 한 객체에 변경가능한 문자열을 만들어 gc를 줄인다.
+// https://onlyfor-me-blog.tistory.com/317
 
 public class P1874_스택수열 {
     public static void main(String[] args) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Stringbuffer sb = new StringBuilder();
     }
 }
