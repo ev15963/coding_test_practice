@@ -39,9 +39,13 @@ public class P1874_스택수열 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Stringbuffer sb = new StringBuilder();
 
-        // 수열의 갯수, 수열 할당
+        // 수열의 갯수 할당, 수열 선언
         int N = Integer.parseInt(br.readLine());
         int[] A = new int[N];
-        
+
+        // 수열 반복문으로 할당
+        for (int i = 0; i < A.length(); i++) {
+            A[i] = Integer.parseInt(br.readLine());
+        }
     }
 }
