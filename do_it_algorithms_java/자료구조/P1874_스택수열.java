@@ -43,6 +43,9 @@ public class P1874_스택수열 {
         int N = Integer.parseInt(br.readLine());
         int[] A = new int[N];
 
+        // 스택 선언
+        Stack<Integer> stack = new Stack<>();
+
         // 수열 반복문으로 할당
         for (int i = 0; i < A.length(); i++) {
             A[i] = Integer.parseInt(br.readLine());
