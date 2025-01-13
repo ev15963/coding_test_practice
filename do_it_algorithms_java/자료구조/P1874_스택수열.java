@@ -37,7 +37,7 @@ package 자료구조;
 public class P1874_스택수열 {
     public static void main(String[] args) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Stringbuffer sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
 
         // 수열의 갯수 할당, 수열 선언
         int N = Integer.parseInt(br.readLine());
@@ -47,8 +47,27 @@ public class P1874_스택수열 {
         Stack<Integer> stack = new Stack<>();
 
         // 수열 반복문으로 할당
-        for (int i = 0; i < A.length(); i++) {
+        for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(br.readLine());
+        }
+
+        // stringbuffer 선언하고 A 배열 길이 만큼 +, - 추가
+        StringBuffer bf = new StringBuffer();
+        boolean result = true;
+        int num = 1; // 오름 차순 수
+
+        for (int i = 0; i < A.length(); i++) {
+            int su = A[i];
+            // 현재 수열이 오름 차순 순서 이상일 경우 push, pop 진행
+            if (su >= num) {
+                while (su >= num) {
+                    stack.push(num++);
+                    bf.append("+\n");
+                }
+                // num이 su 보다 커지면 pop 작업
+                stack.pop();
+                bf.append("-\n");
+            }
         }
     }
 }
