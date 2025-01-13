@@ -38,5 +38,10 @@ public class P1874_스택수열 {
     public static void main(String[] args) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Stringbuffer sb = new StringBuilder();
+
+        // 수열의 갯수, 수열 할당
+        int N = Integer.parseInt(br.readLine());
+        int[] A = new int[N];
+        
     }
 }
