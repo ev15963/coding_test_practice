@@ -67,7 +67,21 @@ public class P1874_스택수열 {
                 // num이 su 보다 커지면 pop 작업
                 stack.pop();
                 bf.append("-\n");
+            } else {
+                int n = stack.pop();
+                // 스택 위 수가 들어오는 수열 보다 크면 출력 불가
+                if (n > su) {
+                    System.out.println("No");
+                    result = false;
+                    break;
+                } else {
+                    bf.append("-\n");
+                }
             }
+        }
+        // 출력 불가 요건이 없다면 출력
+        if (result) {
+            System.out.println(bf.toString());
         }
     }
 }
