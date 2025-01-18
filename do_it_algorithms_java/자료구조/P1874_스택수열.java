@@ -1,5 +1,10 @@
 package 자료구조;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
 // test case
 // input
 // 8 // 수열의 갯수
@@ -21,7 +26,7 @@ package 자료구조;
 // +
 // +
 // -
-// =
+// +
 // +
 // -
 // -
@@ -35,7 +40,7 @@ package 자료구조;
 // https://onlyfor-me-blog.tistory.com/317
 
 public class P1874_스택수열 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
 
@@ -56,7 +61,7 @@ public class P1874_스택수열 {
         boolean result = true;
         int num = 1; // 오름 차순 수
 
-        for (int i = 0; i < A.length(); i++) {
+        for (int i = 0; i < A.length; i++) {
             int su = A[i];
             // 현재 수열이 오름 차순 순서 이상일 경우 push, pop 진행
             if (su >= num) {
