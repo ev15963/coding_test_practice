@@ -42,7 +42,6 @@ import java.util.Stack;
 public class P1874_스택수열 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
 
         // 수열의 갯수 할당, 수열 선언
         int N = Integer.parseInt(br.readLine());
