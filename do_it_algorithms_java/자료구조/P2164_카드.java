@@ -1,8 +1,10 @@
 package 자료구조;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -33,6 +35,10 @@ public class P2164_카드 {
             queue.poll();
             queue.add(queue.poll());
         }
-        System.out.println(queue.toString());
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        bw.write(queue.toString());
+        bw.flush();
+        bw.close();
     }
 }
