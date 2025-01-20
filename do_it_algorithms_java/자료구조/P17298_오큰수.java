@@ -1,8 +1,10 @@
 package 자료구조;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.Stack;
 import java.util.StringTokenizer;
@@ -39,14 +41,23 @@ public class P17298_오큰수 {
             // 오큰수가 아니면 스택에 추가
             stack.push(i);
         }
-        System.out.println(Arrays.toString(arr)); // [5, 7, 7, 7]
-        System.out.println(Arrays.toString(stack.toArray())); // [3]
+        // System.out.println(Arrays.toString(arr)); // [5, 7, 7, 7]
+        // System.out.println(Arrays.toString(stack.toArray())); // [3]
 
         // 오큰수가 없는 경우 (스택 인덱스 기준) -1 출력
         while (!stack.isEmpty()) {
             arr[stack.pop()] = -1; // stack = 3 -> arr[3] = -1
         }
-        System.out.println(Arrays.toString(arr)); // [5, 7, 7, -1]
+        // System.out.println(Arrays.toString(arr)); // [5, 7, 7, -1]
 
+        // 출력하기
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        for (int i = 0; i < N; i++) {
+            bw.write(arr[i] + " ");
+        }
+
+        bw.flush();
+        bw.close();
     }
 }
