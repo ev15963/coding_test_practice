@@ -45,11 +45,6 @@ public class P11286_절댓값힙 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        int[] arr = new int[N];
-
-        for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
-        }
 
         // compare return
         // 양수 : 첫번째 매개변수가 더 큰 값으로 판단
@@ -69,6 +64,20 @@ public class P11286_절댓값힙 {
             }
         });
 
-        System.out.println(Arrays.toString(arr));
+        for (int i = 0; i < N; i++) {
+            int queue_value = Integer.parseInt(br.readLine());
+            // queue 0일때 들어갈 값이 비어있으면 0
+            // 비어 있지 않다면 큐의 front 값 출력
+            if (queue_value == 0) {
+                if (queue.isEmpty()) {
+                    System.out.println("0");
+                } else {
+                    queue.poll());
+                }
+
+            } else {
+                queue.add(queue_value);
+            }
+        }
     }
 }
