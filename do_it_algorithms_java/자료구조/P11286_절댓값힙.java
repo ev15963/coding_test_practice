@@ -72,7 +72,7 @@ public class P11286_절댓값힙 {
                 if (queue.isEmpty()) {
                     System.out.println("0");
                 } else {
-                    queue.poll());
+                    System.out.println(queue.poll());
                 }
 
             } else {
