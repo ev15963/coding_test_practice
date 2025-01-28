@@ -31,3 +31,18 @@ public class P1377_버블소트1 {
         System.out.println(Arrays.toString(arr));
     }
 }
+
+class mData implements Comparable<mData> {
+    int value;
+    int index;
+
+    public mData(int value, int index) {
+        this.value = value;
+        this.index = index;
+    }
+
+    @Override
+    public int compareTo(mData o) {
+        return this.value - o.value;
+    }
+}
