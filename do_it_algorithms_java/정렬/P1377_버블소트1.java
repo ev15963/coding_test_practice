@@ -22,13 +22,17 @@ public class P1377_버블소트1 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int N = Integer.parseInt(br.readLine());
-        int arr[] = new int[N];
+        // int arr[] = new int[N];
+        mData arr[] = new mData[N];
 
         for (int i = 0; i < N; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
+            arr[i] = new mData(Integer.parseInt(br.readLine()), i);
         }
 
-        System.out.println(Arrays.toString(arr));
+        for (int i = 0; i < N; i++) {
+            System.out.println("arr[" + i + "].index" + (arr[i].index));
+            System.out.println("arr[" + i + "].value" + (arr[i].value));
+        }
     }
 }
 
