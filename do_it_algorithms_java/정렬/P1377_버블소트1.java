@@ -29,6 +29,16 @@ public class P1377_버블소트1 {
             arr[i] = new mData(Integer.parseInt(br.readLine()), i);
         }
 
+        Arrays.sort(arr);
+
+        // max 값 저장하기 (정렬 전 - 정렬 후) 추후 max값이 결정나면 +1
+        int max = 0;
+        for (int i = 0; i < N; i++) {
+            max = Math.max(max, arr[i].index - i);
+        }
+
+        System.out.println("Max : " + (max + 1));
+
         for (int i = 0; i < N; i++) {
             System.out.println("arr[" + i + "].index" + (arr[i].index));
             System.out.println("arr[" + i + "].value" + (arr[i].value));
