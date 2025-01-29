@@ -37,12 +37,8 @@ public class P1377_버블소트1 {
             max = Math.max(max, arr[i].index - i);
         }
 
-        System.out.println("Max : " + (max + 1));
+        System.out.println(max + 1);
 
-        for (int i = 0; i < N; i++) {
-            System.out.println("arr[" + i + "].index" + (arr[i].index));
-            System.out.println("arr[" + i + "].value" + (arr[i].value));
-        }
     }
 }
 
