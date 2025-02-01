@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 // test case
 // input
@@ -24,8 +25,18 @@ public class P11399_ATM {
       arr[i] = Integer.parseInt(st.nextToken());
     }
 
-    System.out.println(Arrays.toString(arr));
+    // 삽입 정렬
+    for (int i = 1; i < N; i++) {
+      int key = arr[i];
+      int j = i - 1;
+      while (j >= 0 && arr[j] > key) {
+        arr[j + 1] = arr[j];
+        j--;
+      }
+      arr[j + 1] = key;
+    }
 
+    System.out.println(Arrays.toString(arr));
 
   }
 }
