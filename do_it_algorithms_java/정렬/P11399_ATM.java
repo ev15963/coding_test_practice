@@ -43,8 +43,11 @@ public class P11399_ATM {
       sum[i] = sum[i-1] + arr[i];
     }
 
+    // 합 배열의 총합 구하기
+    int sum = Arrays.stream(sum).sum();
+
     System.out.println(Arrays.toString(arr));
     System.out.println(Arrays.toString(sum));
-
+    System.out.println(sum);
   }
 }
