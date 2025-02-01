@@ -19,6 +19,7 @@ public class P11399_ATM {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     int N = Integer.parseInt(br.readLine());
     int[] arr = new int[N];
+    int[] sum = new int[N];
     StringTokenizer st = new StringTokenizer(br.readLine());
 
     for (int i = 0; i < N; i++) {
@@ -36,7 +37,14 @@ public class P11399_ATM {
       arr[j + 1] = key;
     }
 
+    // 합 배열 구하기
+    sum[0] = arr[0];
+    for (int i = 1; i < N; i++) {
+      sum[i] = sum[i-1] + arr[i];
+    }
+
     System.out.println(Arrays.toString(arr));
+    System.out.println(Arrays.toString(sum));
 
   }
 }
