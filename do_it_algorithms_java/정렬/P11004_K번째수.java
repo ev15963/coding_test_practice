@@ -42,7 +42,6 @@ public class P11004_K번째수 {
                     arr[j] = temp;
                 }
             }
-            // 피벗 보다 큰 값 -> 오른쪽
             // 피벗이 올바른 위치에 들어감
             int temp = arr[i + 1];
             arr[i + 1] = arr[end];
