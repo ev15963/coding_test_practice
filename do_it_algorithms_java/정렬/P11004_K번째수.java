@@ -27,10 +27,10 @@ public class P11004_K번째수 {
         int end = arr.length - 1;
         
         
-        if (start < end) {
+        while (start < end) {
             // 피벗 보다 작은 값 -> 왼쪽
-            int pivot = arr[N - 1];
-            int i = start -1;
+            int pivot = arr[end];
+            int i = start - 1;
 
             // 비벗보다 작은 값들을 앞으로 이동
             for (int j = start; j < end; j++) {
@@ -42,8 +42,14 @@ public class P11004_K번째수 {
                     arr[j] = temp;
                 }
             }
+            // 피벗 보다 큰 값 -> 오른쪽
             // 피벗이 올바른 위치에 들어감
-            
+            int temp = arr[i + 1];
+            arr[i + 1] = arr[end];
+            arr[end] = temp;
+
+            // 정렬 범위를 줄여서 반복
+            end--;
         }
 
         System.out.println(Arrays.toString(arr));
