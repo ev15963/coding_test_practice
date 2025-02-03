@@ -21,6 +21,31 @@ public class P11004_K번째수 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
+        // 퀵정렬
+        // 배열의 마지막 원소를 피벗 선택
+        int start = 0;
+        int end = arr.length - 1;
+        
+        
+        if (start < end) {
+            // 피벗 보다 작은 값 -> 왼쪽
+            int pivot = arr[N - 1];
+            int i = start -1;
+
+            // 비벗보다 작은 값들을 앞으로 이동
+            for (int j = start; j < end; j++) {
+                if (arr[j] <= pivot) {
+                    i++;
+                    // 바꾼다..
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+            // 피벗이 올바른 위치에 들어감
+            
+        }
+
         System.out.println(Arrays.toString(arr));
     }
 }
