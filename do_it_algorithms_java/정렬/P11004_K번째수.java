@@ -52,6 +52,7 @@ public class P11004_K번째수 {
             end--;
         }
 
-        System.out.println(Arrays.toString(arr));
+        // K번째 수 출력
+        System.out.println(arr[K-1]);
     }
 }
