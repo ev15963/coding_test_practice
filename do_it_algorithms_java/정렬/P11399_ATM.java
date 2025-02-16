@@ -40,12 +40,12 @@ public class P11399_ATM {
     // 합 배열 구하기
     sum[0] = arr[0];
     for (int i = 1; i < N; i++) {
-      sum[i] = sum[i-1] + arr[i];
+      sum[i] = sum[i - 1] + arr[i];
     }
 
     // 합 배열의 총합 구하기
-    int sum = Arrays.stream(sum).sum();
+    int totalSum = Arrays.stream(sum).sum();
 
-    System.out.println(sum);
+    System.out.println(totalSum);
   }
 }
