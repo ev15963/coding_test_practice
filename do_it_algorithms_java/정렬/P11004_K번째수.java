@@ -1,5 +1,10 @@
 package 정렬;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 // test case
 // input
 // 5 2 // 데이터 개수, K번째 수
@@ -25,8 +30,7 @@ public class P11004_K번째수 {
         // 배열의 마지막 원소를 피벗 선택
         int start = 0;
         int end = arr.length - 1;
-        
-        
+
         while (start < end) {
             // 피벗 보다 작은 값 -> 왼쪽
             int pivot = arr[end];
@@ -52,6 +56,6 @@ public class P11004_K번째수 {
         }
 
         // K번째 수 출력
-        System.out.println(arr[K-1]);
+        System.out.println(arr[K - 1]);
     }
 }
