@@ -1,8 +1,14 @@
 package 정렬;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
 // test case
 // input
 // 5 // 수의 개수
+// 5
 // 4
 // 3
 // 2
