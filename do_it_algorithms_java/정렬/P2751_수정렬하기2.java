@@ -21,6 +21,9 @@ import java.util.Arrays;
 // 4
 // 5
 
+// 참고 URL
+// https://ittrue.tistory.com/564
+
 public class P2751_수정렬하기2 {
     // mergeSort 함수 생성으로 인한 변수 상위 선언
     static int[] arr;
@@ -42,10 +45,14 @@ public class P2751_수정렬하기2 {
 
     // 병합 정렬
     public static void mergeSort(int start, int end) {
+        // 시작점과 끝점이 같으면 종료
+        if (start == end) {
+            return;
+        }
         // 중간 인덱스 구하기
         int middle = (start + end) / 2;
 
-        // 재귀로 반복 0 ~middle, middle+1 ~ end
+        // 재귀로 반복 0 ~ middle, middle+1 ~ end
         mergeSort(start, middle);
         mergeSort(middle + 1, end);
 
@@ -53,5 +60,6 @@ public class P2751_수정렬하기2 {
         for (int i = start; i <= end; i++) {
             tmp[i] = arr[i];
         }
+
     }
 }
