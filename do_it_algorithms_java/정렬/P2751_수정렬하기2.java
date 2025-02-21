@@ -78,5 +78,31 @@ public class P2751_수정렬하기2 {
             }
             k++;
         }
+
+        // // 남아 있는 요소 담기
+        // while (i < n1) {
+        // arr[k] = leftTemp[i];
+        // i++;
+        // k++;
+        // }
+
+        // while (j < n2) {
+        // arr[k] = rightTemp[j];
+        // j++;
+        // k++;
+        // }
+
+        // tmp[tmpStart1]나 tmp[tmpStart2] 중 남은 값이 있으면 원래 배열에 추가
+        while (tmpStart1 <= middle) {
+            arr[k] = tmp[tmpStart1];
+            tmpStart1++;
+            k++;
+        }
+
+        while (tmpStart2 <= middle) {
+            arr[k] = tmp[tmpStart2];
+            tmpStart2++;
+            k++;
+        }
     }
 }
