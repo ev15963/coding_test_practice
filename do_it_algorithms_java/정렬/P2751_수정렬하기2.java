@@ -61,5 +61,22 @@ public class P2751_수정렬하기2 {
             tmp[i] = arr[i];
         }
 
+        // 복사한 tmp로 반으로 나눠서 비교 (두 그룹을 병합하는 로직)
+        int k = start;
+        int tmpStart1 = start;
+        int tmpStart2 = middle + 1;
+
+        // 복사한 tmp을 반으로 나눠서 비교
+        while (tmpStart1 <= middle && tmpStart2 <= end) {
+            // tmp 배열의 시작점1이 시작점2보다 작거나 같으면 원래 배열에 추가
+            if (tmp[tmpStart1] <= tmp[tmpStart2]) {
+                arr[k] = tmp[tmpStart1];
+                tmpStart1++;
+            } else {
+                arr[k] = tmp[tmpStart2];
+                tmpStart2++;
+            }
+            k++;
+        }
     }
 }
