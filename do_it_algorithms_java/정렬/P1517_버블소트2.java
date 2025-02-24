@@ -16,6 +16,7 @@ import java.util.StringTokenizer;
 public class P1517_버블소트2 {
     static int[] arr;
     static int[] tmp;
+    static long result;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -28,9 +29,10 @@ public class P1517_버블소트2 {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
+        result = 0;
         mergeSort(0, N - 1);
 
-        System.out.println(Arrays.toString(arr));
+        System.out.println(result);
     }
 
     public static void mergeSort(int start, int end) {
@@ -60,11 +62,14 @@ public class P1517_버블소트2 {
             if (tmp[tmpStart1] <= tmp[tmpStart2]) {
                 arr[k] = tmp[tmpStart1];
                 tmpStart1++;
+                k++;
             } else {
                 arr[k] = tmp[tmpStart2];
+                // tmpStart2 (오른쪽에 있는 배열의 숫자)가 왼쪽으로 움직일 때 result에 카운트
+                result = result + (tmpStart2 - k);
                 tmpStart2++;
+                k++;
             }
-            k++;
         }
 
         // 남은 거 채우기
