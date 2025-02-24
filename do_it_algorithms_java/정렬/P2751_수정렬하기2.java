@@ -88,7 +88,7 @@ public class P2751_수정렬하기2 {
             k++;
         }
 
-        while (tmpStart2 <= middle) {
+        while (tmpStart2 <= end) {
             arr[k] = tmp[tmpStart2];
             tmpStart2++;
             k++;
