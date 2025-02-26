@@ -30,7 +30,7 @@ package 정렬;
 // 831
 
 public class P10989_수정렬하기3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         int[] arr = new int[N];
