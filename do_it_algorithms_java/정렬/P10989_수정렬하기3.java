@@ -40,6 +40,11 @@ public class P10989_수정렬하기3 {
         br.close();
 
         // 기수정렬
-        RadixSort(A, 5);
+        RadixSort(arr, 5);
+    }
+
+    public static void RadixSort(int[] arr, int maxSize) {
+        // 기수 정렬 시킬 새 배열
+        int[] output = new int[A.length];
     }
 }
