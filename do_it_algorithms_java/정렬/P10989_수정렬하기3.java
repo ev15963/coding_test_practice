@@ -45,6 +45,18 @@ public class P10989_수정렬하기3 {
 
     public static void RadixSort(int[] arr, int maxSize) {
         // 기수 정렬 시킬 새 배열
-        int[] output = new int[A.length];
+        int[] output = new int[arr.length];
+        int jarisu = 1;
+        int count = 0;
+
+        while(count != maxSize) {
+            int[] bucket = new int[10];
+            // 일의 자릿수가 몇개 있는지 배열로 나타냄
+            for (int i = 0; i < arr.length; i++) {
+                bucket[(arr[i] / jarisu) % 10]++;
+            }
+            
+            count++;
+        }
     }
 }
