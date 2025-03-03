@@ -55,7 +55,14 @@ public class P10989_수정렬하기3 {
             for (int i = 0; i < arr.length; i++) {
                 bucket[(arr[i] / jarisu) % 10]++;
             }
+            // 중간 결과 : [1, 1, 1, 0, 3, 3, 0, 0, 2, 0]
             
+            // 합배열 사용
+            for (int i = 1; i < 10; i++) {
+                bucket[i] = bucket[i] + bucket[i-1];
+            }
+            // 중간 결과 : [1, 2, 3, 3, 6, 9, 9, 9, 11, 11]
+               
             count++;
         }
     }
