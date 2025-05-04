@@ -15,6 +15,18 @@ def solution(pouches):
             contributions.append(contribution);
             contributions.sort(reverse=True);
             
+            # todo 3. 기여도의 누적합을 구하기
+            length = len(contributions);
+            print(f'length: {length}');
+            count = 0;
+            prefixSum = [0]*length  # prefixSum을 담을 빈 배열 생성
+            prefixSum[0] = contributions[0] # 첫번째 값을 넣어줌
+            for i in range(1,length): # 두번째 값부터 누적합을 저장
+                prefixSum[i] = prefixSum[i-1] + contributions[i]
+                if prefixSum[i] <= 0:
+                    count += i
+                    break;
+        
         max_count = max(max_count, count);
             
     return max_count;
