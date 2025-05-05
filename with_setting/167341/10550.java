@@ -7,9 +7,9 @@ class Main {
     public static int solution(String[] pouches) {
         // todo 1. 낱말을 abcde 문자열로 순회하며 진행
         for (String flavor : "abcde") {
-            
+            // todo 2. contributions 기여도 구하기
+            int[] contributions = {};
         }
-        int answer = 0;
         return answer;
     }
     public static void main(String[] args) {
