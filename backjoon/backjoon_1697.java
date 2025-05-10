@@ -38,9 +38,11 @@ class Main {
         return -1;
     }
 
-    public static void main(String[] args) {
-        int N = 5;
-        int K = 17;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
         int sol = solution(N, K);
         System.out.println(sol); // to be 4
     }
