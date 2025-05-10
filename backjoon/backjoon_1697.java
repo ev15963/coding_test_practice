@@ -28,7 +28,7 @@ class Main {
             int[] nextSteps = { position - 1, position + 1, position * 2 }; // {X-1, X+1, 2*X}
 
             for (int nextStep : nextSteps) {
-                if (nextStep > 0 && nextStep < visited.length && !visited[nextStep]) {
+                if (nextStep >= 0 && nextStep < visited.length && !visited[nextStep]) {
                     visited[nextStep] = true;
                     queue.offer(new int[] { nextStep, depth + 1 });
                 }
