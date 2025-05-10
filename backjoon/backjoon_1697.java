@@ -6,7 +6,7 @@ import java.io.*;
 class Main {
     public static int solution(int N, int K) {
         // todo 1. 방문 배열 만들기
-        boolean[] visited = new boolean[10001];
+        boolean[] visited = new boolean[100001];
 
         // todo 2. 큐배열 선언
         Queue<int[]> queue = new LinkedList<>();
