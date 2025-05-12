@@ -4,8 +4,8 @@ import java.io.*;
 
 // The main method must be in a class named "Main".
 class Main {
-    public int solution(String[] tickets, int roll, String[][] shop, int money) {
-        
+    public static int solution(String[] tickets, int roll, String[][] shop, int money) {
+        return 0;
     }
     public static void main(String[] args) {
         // to be 2;
