@@ -5,6 +5,15 @@ import java.io.*;
 // The main method must be in a class named "Main".
 class Main {
     public static int solution(String[] tickets, int roll, String[][] shop, int money) {
+        // 1. 티켓 이름 -> 가격으로 변환
+        Map<String, Integer> ticketMap = new HashMap<>();
+        
+        for (String ticket : tickets) {
+            String[] info = ticket.split(" ");
+            ticketMap.put(info[0], Integer.parseInt(info[1]));
+        }
+        System.out.println(ticketMap.get("A"));
+        
         return 0;
     }
     public static void main(String[] args) {
