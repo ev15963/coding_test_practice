@@ -13,6 +13,25 @@ class Main {
             ticketMap.put(info[0], Integer.parseInt(info[1]));
         }
         System.out.println(ticketMap.get("A"));
+
+        // 2. 0 ~ n-1 회 새로고침 가능한 경우의 수를 시도 == 최대 roll 구하기
+        int maxGetTicket = 0;
+        for (int i = 0; i < shop.length; i++) {
+            money -= roll * i;
+            if (money < 0) {
+                continue;
+            }
+            int maxRoll = i;
+            System.out.println("maxRoll: "+maxRoll);
+            System.out.println(money);
+            System.out.println(Arrays.toString(shop[i]));
+
+            // 0 ~ maxRoll 까지 상점 순회
+            for (int j = 0; j <= maxRoll; j++) {
+                System.out.println(shop[maxRoll][j]);
+                System.out.println("ticketMap.get(shop[j])"+ticketMap.get(shop[maxRoll][j]));
+            }
+        }
         
         return 0;
     }
