@@ -1,6 +1,8 @@
 def solution(N, K):
-    ans = 0;
-    return ans;
+    # todo 1. 방문 배열 만들기
+    visited = [False] * 100001;
+    
+    return 0;
 
 N = 5;
 K = 17;
