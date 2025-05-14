@@ -1,9 +1,11 @@
+from collections import deque
+
 def solution(N, K):
     # todo 1. 방문 배열 만들기
     visited = [False] * 100001;
 
     # todo 2. 큐배열 선언
-    queue = queue.Queue();
+    queue = deque();
     
     return 0;
 
