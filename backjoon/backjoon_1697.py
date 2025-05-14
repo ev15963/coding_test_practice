@@ -7,6 +7,12 @@ def solution(N, K):
     # todo 2. 큐배열 선언
     queue = deque();
     
+    queue.append(N);
+    visited[N] = True;
+    
+    # todo 2-1. 시간 담는 배열
+    time = [0] * 100001;
+    
     return 0;
 
 N = 5;
