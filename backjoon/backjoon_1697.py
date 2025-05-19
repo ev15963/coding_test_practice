@@ -9,18 +9,15 @@ def solution(N, K):
 
     # todo 2. 큐배열 선언
     queue = deque();
-    
     queue.append(N);
-    seconds = 0;
     
     # todo 3. 큐에 해당 값이 추가되면 방문 배열에 true로 전환
     visited[N] = True;
-    time[N] = seconds;
 
     # todo 4. queue가 계속 있는 동안 진행
     while (queue):
         position = queue.popleft();
-        depth = ++seconds;
+        depth = time[position];
         
         # todo 5. 만약 도착지점과 같다면 시간(깊이) 반환
         if (position == K):
@@ -32,9 +29,10 @@ def solution(N, K):
         for nextStep in nextSteps:
             if nextStep >= 0 and nextStep < len(visited) and not visited[nextStep]:
                 visited[nextStep] = True;
-                queue.insert(nextStep);
-    
-    return depth;
+                queue.append(nextStep);
+                time[nextStep] = time[position] + 1;
+
+    return -1;
 
 N = 5;
 K = 17;
