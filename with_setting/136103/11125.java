@@ -15,6 +15,10 @@ class Main {
 
         int n = shop.length;
         int maxGold = 0;
+
+        // 2. 누적 상점, 누적 티켓 선언
+        List<Map<String, Integer>> prefixSum = new ArrayList<>();
+        Map<String, Integer> cumulative = new HashMap<>();
         
         return maxGold;
     }
