@@ -19,6 +19,20 @@ class Main {
         // 2. 누적 상점, 누적 티켓 선언
         List<Map<String, Integer>> prefixSum = new ArrayList<>();
         Map<String, Integer> cumulative = new HashMap<>();
+
+        // 3. 누적 상점 기반 티켓 갯수 세기
+        for (int i = 0; i < n; i++) {
+            Map<String, Integer> current = new HashMap<>(cumulative);
+            for (String t : shop[i]) {
+                current.put(t, current.getOrDefault(t, 0) + 1);
+            }
+            current.forEach((key, value) -> {	
+            	System.out.println(key + " : " + value);	
+            });
+            System.out.println("=================");
+            
+            cumulative = current;
+        }
         
         return maxGold;
     }
