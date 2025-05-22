@@ -13,6 +13,13 @@ class Main {
             ticketMap.put(info[0], Integer.parseInt(info[1]));
         }
 
+        ticketMap.forEach((key, value) -> {	
+            System.out.println(key + " : " + value);	
+        });
+        Set<String> keySet = ticketMap.keySet();
+        
+        System.out.println("--------------");
+        
         int n = shop.length;
         int maxGold = 0;
 
@@ -30,9 +37,17 @@ class Main {
             	System.out.println(key + " : " + value);	
             });
             System.out.println("=================");
-            
+            prefixSum.add(current);
+            System.out.println(prefixSum); // [{B=2, C=2}, {A=3, B=3, C=2}, {A=3, B=3, C=3, D=3}]
             cumulative = current;
         }
+
+        // 4. prefixSum 값을 이용해 최선의 갯수 구하기
+        for (int i = 0; i < n; i++) {
+            prefixSum.get(i);
+        }
+        System.out.println("prefixSum.get(0) : "+prefixSum.get(0));
+
         
         return maxGold;
     }
