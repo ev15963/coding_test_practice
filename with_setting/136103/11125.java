@@ -16,7 +16,6 @@ class Main {
         ticketMap.forEach((key, value) -> {	
             System.out.println(key + " : " + value);	
         });
-        Set<String> keySet = ticketMap.keySet();
         
         System.out.println("--------------");
         
