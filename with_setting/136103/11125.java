@@ -47,8 +47,7 @@ class Main {
         }
         System.out.println("prefixSum.get(0) : "+prefixSum.get(0));
 
-        // roll 가격 빼고 prefixSum 3개 이상 중 가격 낮은 순으로 정렬, moneyList 생성
-        List<Integer> moneyList = new ArrayList<>();
+        // roll 가격 빼고 prefixSum 3개 이상 중 가격 낮은 순으로 정렬
         for (int i = 0; i < prefixSum.size(); i++) {
             money -= (roll * i);
             Map<String, Integer> prefixSumOne = prefixSum.get(i);
@@ -56,10 +55,18 @@ class Main {
             keySet.sort(Comparator.comparingInt(ticketMap::get));
             System.out.println("keySet : "+ keySet);
 
-            moneyList.add(money);
-            System.out.println("moneyList : "+moneyList);
-            
-        }
+            // 가격기준 오름차순으로 된 keySet 저렴한 티켓 구하기
+            int lowCostTicket = money;
+            System.out.println("lowCostTicket1 : "+lowCostTicket);
+            for (String key : keySet) {
+                int cost = ticketMap.get(key);
+                int count = prefixSumOne.get(key);
+                System.out.println("cost : "+cost);
+                System.out.println("count : "+count);
+
+                lowCostTicket = Math.min(cost, lowCostTicket);
+                System.out.println("lowCostTicket : "+lowCostTicket);
+            }
         
         return maxGold;
     }
