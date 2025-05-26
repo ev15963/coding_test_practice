@@ -47,11 +47,19 @@ class Main {
         }
         System.out.println("prefixSum.get(0) : "+prefixSum.get(0));
 
-        // roll 가격 빼고 prefixSum 3개 이상 중 가격 낮은 순으로 정렬
-        Map<String, Integer> prefixSumOne = prefixSum.get(0);
-        List<String> keySet = new ArrayList<>(prefixSumOne.keySet());
-        keySet.sort(Comparator.comparingInt(ticketMap::get));
-        System.out.println("keySet : "+ keySet);
+        // roll 가격 빼고 prefixSum 3개 이상 중 가격 낮은 순으로 정렬, moneyList 생성
+        List<Integer> moneyList = new ArrayList<>();
+        for (int i = 0; i < prefixSum.size(); i++) {
+            money -= (roll * i);
+            Map<String, Integer> prefixSumOne = prefixSum.get(i);
+            List<String> keySet = new ArrayList<>(prefixSumOne.keySet());
+            keySet.sort(Comparator.comparingInt(ticketMap::get));
+            System.out.println("keySet : "+ keySet);
+
+            moneyList.add(money);
+            System.out.println("moneyList : "+moneyList);
+            
+        }
         
         return maxGold;
     }
