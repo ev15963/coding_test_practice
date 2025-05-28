@@ -67,7 +67,7 @@ class Main {
                 lowCostTicket = Math.min(cost, lowCostTicket);
                 System.out.println("lowCostTicket : "+lowCostTicket);
             }
-        
+        }
         return maxGold;
     }
     public static void main(String[] args) {
