@@ -13,12 +13,6 @@ class Main {
             ticketMap.put(info[0], Integer.parseInt(info[1]));
         }
 
-        ticketMap.forEach((key, value) -> {	
-            System.out.println(key + " : " + value);	
-        });
-        
-        System.out.println("--------------");
-        
         int n = shop.length;
         int maxGold = 0;
 
@@ -35,9 +29,6 @@ class Main {
             current.forEach((key, value) -> {	
             	System.out.println(key + " : " + value);	
             });
-            System.out.println("=================");
-            prefixSum.add(current);
-            System.out.println(prefixSum); // [{B=2, C=2}, {A=3, B=3, C=2}, {A=3, B=3, C=3, D=3}]
             cumulative = current;
         }
 
@@ -45,8 +36,7 @@ class Main {
         for (int i = 0; i < n; i++) {
             prefixSum.get(i);
         }
-        System.out.println("prefixSum.get(0) : "+prefixSum.get(0));
-
+        
         int budget = money;
         
         // roll 가격 빼고 prefixSum 3개 이상 중 가격 낮은 순으로 정렬
@@ -60,30 +50,19 @@ class Main {
             Map<String, Integer> prefixSumOne = prefixSum.get(i);
             List<String> keySet = new ArrayList<>(prefixSumOne.keySet());
             keySet.sort(Comparator.comparingInt(ticketMap::get));
-            System.out.println("keySet : "+ keySet);
-
 
             // 가격기준 오름차순으로 된 keySet 저렴한 티켓 구하기
-            System.out.println("rollCost1 : "+rollCost);
-
             int copyRollCost = balance;
             int goldCount = 0;
-            System.out.println("copyRollCost_before : "+copyRollCost);
             
             for (String key : keySet) {
                 int cost = ticketMap.get(key);
                 int count = prefixSumOne.get(key);
-                System.out.println("cost : "+cost);
-                System.out.println("count : "+count);
-
 
                 // 최대 구매량 : 잔액에서 나눈 금액이 갖고 있는 수량을 비교해서 적은 수량
                 int maxBuyQuantity = Math.min(copyRollCost / cost, count);
-                System.out.println("maxBuyQuantity : "+maxBuyQuantity);
 
                 copyRollCost -= maxBuyQuantity * cost;
-
-                System.out.println("copyRollCost : "+copyRollCost);
 
                 // 구매할 수 있는 수량을 goldCount에 추가
                 goldCount = maxBuyQuantity;
