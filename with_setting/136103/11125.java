@@ -47,26 +47,49 @@ class Main {
         }
         System.out.println("prefixSum.get(0) : "+prefixSum.get(0));
 
+        int budget = money;
+        
         // roll 가격 빼고 prefixSum 3개 이상 중 가격 낮은 순으로 정렬
         for (int i = 0; i < prefixSum.size(); i++) {
-            money -= (roll * i);
+            int rollCost = roll * i;
+
+            if (budget < rollCost) continue;
+
+            int balance = budget - rollCost; // 잔액
+            
             Map<String, Integer> prefixSumOne = prefixSum.get(i);
             List<String> keySet = new ArrayList<>(prefixSumOne.keySet());
             keySet.sort(Comparator.comparingInt(ticketMap::get));
             System.out.println("keySet : "+ keySet);
 
+
             // 가격기준 오름차순으로 된 keySet 저렴한 티켓 구하기
-            int lowCostTicket = money;
-            System.out.println("lowCostTicket1 : "+lowCostTicket);
+            System.out.println("rollCost1 : "+rollCost);
+
+            int copyRollCost = balance;
+            int goldCount = 0;
+            System.out.println("copyRollCost_before : "+copyRollCost);
+            
             for (String key : keySet) {
                 int cost = ticketMap.get(key);
                 int count = prefixSumOne.get(key);
                 System.out.println("cost : "+cost);
                 System.out.println("count : "+count);
 
-                lowCostTicket = Math.min(cost, lowCostTicket);
-                System.out.println("lowCostTicket : "+lowCostTicket);
+
+                // 최대 구매량 : 잔액에서 나눈 금액이 갖고 있는 수량을 비교해서 적은 수량
+                int maxBuyQuantity = Math.min(copyRollCost / cost, count);
+                System.out.println("maxBuyQuantity : "+maxBuyQuantity);
+
+                copyRollCost -= maxBuyQuantity * cost;
+
+                System.out.println("copyRollCost : "+copyRollCost);
+
+                // 구매할 수 있는 수량을 goldCount에 추가
+                goldCount = maxBuyQuantity;
+
             }
+            maxGold = Math.max(goldCount, maxGold);
         }
         return maxGold;
     }
