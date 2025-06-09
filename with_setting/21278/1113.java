@@ -9,16 +9,21 @@ class Main {
         return answer;
     }
     
-    public static void main(String[] args) {
-        // 예제 1
-        int[][] office1 = {{1,0,0,0},{0,0,0,1},{0,0,1,0},{0,1,1,0}};
-        int k1 = 2;
-        System.out.println(solution(office1, k1));  // to be 3
+    public static int solution(int[][] office, int k) {
+        int len = office.length;
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                int count = 0;
+                for (int x = 0; x < len - k + 1; x++) {
+                    for (int y = 0; y < len - k + 1; y++) {
+                        if (office[x][y] == 1) {
+                            count += 1;
+                        }
+                    }  
+                }
+            }
+        }
         
-        // // 예제 2
-        // int[][] office2 = [[1,0,0],[0,0,1],[1,0,0]];
-        // int k2 = 2;
-        // System.out.println(solution(office2, k2));  // to be 1
-
+        return -1;
     }
 }
