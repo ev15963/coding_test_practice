@@ -24,20 +24,24 @@ class Main {
                 // 현위치에서 나가아야할 위치 더해주기
                 int plusRow = r + rowDis[street];
                 int plusCol = c + colDis[street];
-
+ 
                 // 남북, 동서의 제한이 없고 물체 (-1)가 없는 경우 이동
-                if ((plusRow >= 0 && plusRow < n) && (plusCol >= 0 && plusCol < n) && (office[plusRow][plusCol] != -1)) {
-                    
+                if ((plusRow >= 0 && plusRow < length) && (plusCol >= 0 && plusCol < length) && (office[plusRow][plusCol] != -1)) {
+                    r = plusRow;
+                    c = plusCol;
+
+                    cleanDis += office[r][c];
+                    office[r][c] = 0;
                 }
                 
             } else if (mission.equals("left")) {
-                
-            } else (mission.equals("right")) {
-                
+                street = (street + 3) % 4;
+            } else if (mission.equals("right")) {
+                street = (street + 1) % 4;
             }
         }
         
-        return 0;
+        return cleanDis;
     }
     public static void main(String[] args) {
         int[][] office = {{5,-1,4},{6,3,-1},{2,-1,1}};
