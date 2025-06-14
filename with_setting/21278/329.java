@@ -5,6 +5,17 @@ import java.io.*;
 // The main method must be in a class named "Main".
 class Main {
     public static int solution(int n, int k) {
+
+        // 조합 구하기
+        int MOD = 10007;
+        int[][] comb = new int[n + 1][n + 1];
+        for (int i = 0; i <= n; i++) {
+            comb[i][0] = comb[i][i] = 1;
+            for (int j = 1; j < i; j++) {
+                comb[i][j] = (comb[i - 1][j - 1] + comb[i - 1][j]) % MOD;
+            }
+        }
+
         return -1;
     }
     
