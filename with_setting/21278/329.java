@@ -16,6 +16,14 @@ class Main {
             }
         }
 
+        // 팩토리얼 구하기
+        int[] factorial = new int[k + 1];
+        factorial[0] = 1;
+
+        for (int i = 1; i <= k; i++) {
+            factorial[i] = (factorial[i-1] * i) % MOD;
+        }
+
         return -1;
     }
     
