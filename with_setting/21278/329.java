@@ -24,7 +24,11 @@ class Main {
             factorial[i] = (factorial[i-1] * i) % MOD;
         }
 
-        return -1;
+        // 답 구하기 행 * 열 * 팩토리얼
+        int ans = (comb[n][k]*comb[n][k]) % MOD;
+        ans  = (ans * factorial[k]) % MOD;
+        
+        return ans;
     }
     
     public static void main(String[] args) {
