@@ -5,7 +5,7 @@ import java.io.*;
 // The main method must be in a class named "Main".
 class Main {
     public static String longestCommonPrefix(String[] strs) {
-        if (strs.length == 0 || strs == null) return "";
+        if (strs == null || strs.length == 0) return "";
         String prefix = strs[0];
         for (int i = 1; i < strs.length; i++) {
             while (!strs[i].startsWith(prefix)) {
