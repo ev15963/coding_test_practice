@@ -33,6 +33,32 @@ class Main {
                 }
             }
         }
+
+        // 우선순위 큐를 이용한 다익스트라 초기화
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        pq.offer(new Node(startR, startC, 0));
+        dist[startR][startC] = 0;
+
+        // 큐가 없을 때 까지 동안 비용 구하기
+        while (!pq.isEmpty()) {
+            Node curr = pq.poll();
+
+            // 현재 노드와 비용 추출
+            int row = curr.r;
+            int col = curr.c;
+            int cost = curr.cost;
+
+            // 부여된 비용이 클 경우 continue
+            if (cost > dist[row][col]) {
+                continue;
+            }
+
+            // 도착했다면 종료
+            if ((endR == row) && (endC == col)) {
+                return cost;
+            }
+            
+        }
         
         return 0;
     }
