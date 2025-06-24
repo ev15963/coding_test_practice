@@ -18,6 +18,21 @@ class Main {
         for (int[] row : dist) {
             Arrays.fill(row, Integer.MAX_VALUE);
         }
+
+        // 시작지점, 도착지점 좌표 가져오기
+        int startR = 0, startC = 0, endR = 0, endC = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (board[i][j] == 2) {
+                    startR = i;
+                    startC = j;
+                } else if (board[i][j] == 3) {
+                    endR = i;
+                    endC = j;
+                }
+            }
+        }
         
         return 0;
     }
