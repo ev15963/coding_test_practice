@@ -83,6 +83,13 @@ class Main {
                 if (nowRow < 0 || nowRow >= n || nowCol < 0 || nowCol >= m) {
                     continue;
                 }
+
+                // 비용 계산하는 cost를 따로 선언하여 계산
+                int nextCost = cost + 1;
+                // board를 이용해서 이동한 위치가 장애물이 있는 경우 c 만큼 추가
+                if (board[nowRow][nowCol] == 1) {
+                    nextCost += c;
+                }
                 
         }
         // 도달할 수 없는 경우 -1 처리
