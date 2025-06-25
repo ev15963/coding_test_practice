@@ -5,6 +5,22 @@ import java.io.*;
 // The main method must be in a class named "Main".
 class Main {
     public static int solution(int[][] board, int c) {
+        // 노드 클래스 생성
+        class Node implements Comparable<Node> {
+            int r, c, cost;
+    
+            Node(int r, int c, int cost) {
+                this.r = r;
+                this.c = c;
+                this.cost = cost;
+            }
+    
+            // 비용 기준 오름차순 정렬
+            public int compareTo(Node o) {
+                return this.cost - o.cost;
+            }
+        }
+        
         // 상하좌우 이동
         int[] dr = {-1, 1, 0, 0};
         int[] dc = {0, 0, -1, 1};
