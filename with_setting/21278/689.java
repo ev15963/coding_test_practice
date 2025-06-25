@@ -54,7 +54,7 @@ class Main {
         PriorityQueue<Node> pq = new PriorityQueue<>();
         pq.offer(new Node(startR, startC, 0));
         dist[startR][startC] = 0;
-
+        
         // 큐가 없을 때 까지 동안 비용 구하기
         while (!pq.isEmpty()) {
             Node curr = pq.poll();
@@ -73,10 +73,20 @@ class Main {
             if ((endR == row) && (endC == col)) {
                 return cost;
             }
-            
+
+            // 상하좌우 이동시
+            for (int i = 0; i < 4; i++) {
+                int nowRow = dr[i] + row;
+                int nowCol = dc[i] + col;
+                
+                // 배열 인덱스 초과 오류 방어
+                if (nowRow < 0 || nowRow >= n || nowCol < 0 || nowCol >= m) {
+                    continue;
+                }
+                
         }
-        
-        return 0;
+        // 도달할 수 없는 경우 -1 처리
+        return -1;
     }
 
     public static void main(String[] args) {
