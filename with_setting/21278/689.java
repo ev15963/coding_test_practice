@@ -90,8 +90,14 @@ class Main {
                 if (board[nowRow][nowCol] == 1) {
                     nextCost += c;
                 }
-            }
+
+                // 더 적은 비용으로 갈 수 있으면 갱신
+                if (nextCost < dist[nowRow][nowCol]) {
+                    dist[nowRow][nowCol] = nextCost;
+                    pq.offer(new Node(nowRow, nowCol, nextCost));
+                }
                 
+            }
         }
         // 도달할 수 없는 경우 -1 처리
         return -1;
@@ -104,7 +110,7 @@ class Main {
         int[][] board2 = {{0,0,0,0,2,0,0,0,0,0},{0,0,1,1,1,1,1,0,0,0},{0,0,1,1,1,1,1,1,0,0},{0,0,1,1,1,1,1,0,1,0},{0,0,1,1,1,1,1,0,0,0},{0,0,0,0,3,0,0,0,1,0}};
         int c2 = 2;
             
-        System.out.println(solution(board1, c1));
-        System.out.println(solution(board2, c2));
+        System.out.println(solution(board1, c1)); // to be 9
+        System.out.println(solution(board2, c2)); // to be 11
     }
 }
