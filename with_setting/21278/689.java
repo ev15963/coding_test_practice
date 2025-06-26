@@ -90,6 +90,7 @@ class Main {
                 if (board[nowRow][nowCol] == 1) {
                     nextCost += c;
                 }
+            }
                 
         }
         // 도달할 수 없는 경우 -1 처리
