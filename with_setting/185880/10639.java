@@ -6,27 +6,41 @@ import java.io.*;
 class Main {
     public static int solution(String[] drum) {
         int leng = drum.length;
-        int dr = 0;
-        int dc = 0;
-        boolean checked = false;
         int count = 0;
 
-        // 특수 기호에 따라 방향 이동
         for (int i = 0; i < leng; i++) {
-            char[] strs = drum[i].toCharArray();
-                if (strs[dr] == '#') {
-                    dc += 1;
-                } else if (strs[dr] == '>') {
-                    dr += 1;
-                } else if (strs[dr] == '<') {
-                    dr -= 1;
-                } else if (strs[dr] == '*' && !checked) {
-                    checked = true;
-                    dc += 1;
+            boolean checked = false;
+            int dr = 0;
+            int dc = i;
+            while (dr < leng) {
+                if (dc < 0 || dc >= leng) {
+                    break;
                 }
+                
+                char currentChar = drum[dr].charAt(dc);
+                if (currentChar == '#') {
+                    dr++;
+                } else if (currentChar == '>') {
+                    dc++;
+                } else if (currentChar == '<') {
+                    dc--;
+                } else if (currentChar == '*') {
+                    if (!checked) {
+                        checked = true;
+                        dr++;
+                    } else {
+                        break;
+                    }
+                }
+
+            }
+            // 끝까지 도달하였으면 count 추가
+            if (dr == leng) {
+                count++;
+            }
         }
-        
-        return -1;
+
+        return count;
     }
     
     public static void main(String[] args) {
